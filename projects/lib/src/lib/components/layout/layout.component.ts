@@ -1,6 +1,6 @@
 import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { SidebarFooter, SidebarRoute } from "../../interfaces";
+import { SidebarFooter } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -13,11 +13,11 @@ import { LoadingComponent } from "../loading/loading.component";
   imports: [SidebarComponent, TopbarComponent, LoadingComponent, CommonModule],
 })
 export class LayoutComponent {
-  @Input() show: boolean = true;
+  @Input() renderApp: any = true;
   @Input() title?: string;
   @Input() subtitle?: string;
-  @Input() loading?: boolean = false;
-  @Input() showTopbar?: boolean = true;
+  @Input() loading?: any = false;
+  @Input() showTopbar?: any = true;
   @Input() logo?: string = "/assets/logo.png";
   @Input() sidebarFooter?: SidebarFooter;
 
