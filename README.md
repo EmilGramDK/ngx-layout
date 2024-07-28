@@ -46,12 +46,15 @@ npm install @emilgramdk/ngx-layout
 3. **Available Props**: You can pass these props to the layout.
 
    ```html
-   <ngx-layout loading="boolean" Shows a loader renderApp="boolean" Tell the
-   layout to wait for a state before rendering the app logo="string" Path to
-   logo title="string" Title in the Topbar subTitle="string" Subtitle in the
-   Topbar showTopbar="boolean" Hide the topbar sidebarFooter="SidebarFooter"
-   Pass this to show a footer in the sidebar. {title: string; subTitle: string;
-   onClick: function} >
+   <ngx-layout
+      loading="boolean"                     Shows a loader
+      renderApp="boolean"                   Tell the layout to wait for a state before rendering the app
+      logo="string"                         Path to logo
+      title="string"                        Title in the Topbar
+      subTitle="string"                     Subtitle in the Topbar
+      showTopbar="boolean"                  Hide the topbar
+      sidebarFooter="SidebarFooter"         Pass this to show a footer in the sidebar. {title: string; subTitle: string; onClick: function}
+   </ngx-layout>
    ```
 
 4. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
