@@ -49,18 +49,6 @@ body {
   color: #fff;
   z-index: 999999;
 }
-.fullscreen .light {
-  background: #22303c !important;
-}
-.fullscreen .loading {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999999;
-}
-
 .content_area {
   margin-left: 275px;
 }
@@ -222,3 +210,30 @@ body {
   gap: 0.75rem; /* Equivalent to gap-3 */
   align-items: center;
 }
+/* loading */
+.fullscreen.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+.loading svg {
+  animation: spin 1s linear infinite;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #fff;
+}
+.loading svg circle {
+  opacity: 0.25;
+}
+.loading svg path {
+  opacity: 0.75;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* loading */
