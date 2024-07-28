@@ -1,0 +1,10 @@
+<ngx-layout-loading *ngIf="loading"></ngx-layout-loading>
+
+<ngx-layout-sidebar *ngIf="show" [footer]="sidebarFooter" [logo]="logo">
+  <ngx-layout-topbar [title]="title" [subTitle]="subtitle" *ngIf="showTopbar">
+    <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
+  </ngx-layout-topbar>
+  <div class="layout_page">
+    <ng-content></ng-content>
+  </div>
+</ngx-layout-sidebar>

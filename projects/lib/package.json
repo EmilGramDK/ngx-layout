@@ -1,0 +1,27 @@
+{
+  "name": "@emilgramdk/ngx-layout",
+  "version": "1.0.0",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/emilgramdk"
+  },
+  "description": "Simple Angular library layout",
+  "author": "Emil Gram",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilgramdk/ngx-layout.git"
+  },
+  "homepage": "https://github.com/emilgramdk/ngx-layout",
+  "bugs": {
+    "url": "https://github.com/emilgramdk/ngx-layout/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.5.0"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="layout_sidebar">
+    <div class="logo_container">
+      <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
+    </div>
+    <nav class="sidebar_nav" *ngIf="path !== 'login'">
+      <ul role="list" class="nav_list">
+        <li>
+          <ul role="list" class="nav_items">
+            <li
+              *ngFor="let item of routes"
+              class="nav_item"
+              [ngClass]="{
+                active: item.path === path,
+                inactive: item.path !== path,
+                hidden: !item.showInMenu
+              }"
+            >
+              <div (click)="goToPage(item.path!)" class="nav_link">
+                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                {{ item.title }}
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="footer" *ngIf="footer">
+          <div class="footer_content" (click)="footer.onClick()">
+            <div class="footer_text">
+              <span class="footer_title">{{ footer.title }}</span>
+              <span class="footer_subtitle">{{ footer.subTitle }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content_area">
+    <ng-content></ng-content>
+  </div>
+</div>
