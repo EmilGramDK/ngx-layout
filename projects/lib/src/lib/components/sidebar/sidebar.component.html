@@ -3,7 +3,7 @@
     <div class="logo_container">
       <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
     </div>
-    <nav class="sidebar_nav" *ngIf="path !== 'login'">
+    <nav class="sidebar_nav">
       <ul role="list" class="nav_list">
         <li>
           <ul role="list" class="nav_items">
@@ -13,7 +13,7 @@
               [ngClass]="{
                 active: item.path === path,
                 inactive: item.path !== path,
-                hidden: !item.showInMenu
+                hidden: item.hideFromMenu
               }"
             >
               <div (click)="goToPage(item.path!)" class="nav_link">

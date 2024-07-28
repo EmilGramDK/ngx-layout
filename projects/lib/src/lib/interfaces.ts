@@ -1,7 +1,7 @@
 import { Route } from "@angular/router";
 
 export interface SidebarRoute extends Route {
-  showInMenu?: boolean;
+  hideFromMenu?: boolean;
   icon?: string;
 }
 

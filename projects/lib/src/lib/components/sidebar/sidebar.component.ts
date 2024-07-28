@@ -11,6 +11,7 @@ import { SidebarFooter, SidebarRoute } from "../../interfaces";
 })
 export class SidebarComponent {
   routes: SidebarRoute[] = [];
+  @Input() debug: boolean = false;
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
 
@@ -18,6 +19,14 @@ export class SidebarComponent {
 
   constructor(private router: Router) {
     this.routes = this.router.config;
+
+    if (this.debug) {
+      console.log("DEBUG LOG FROM SIDEBAR COMPONENT");
+      console.log("Debug: ", this.debug);
+      console.log("Routes: ", this.routes);
+      console.log("Logo: ", this.logo);
+      console.log("Footer: ", this.footer);
+    }
 
     this.router.events.subscribe((val) => {
       this.path = this.router.url.replace("/", "");

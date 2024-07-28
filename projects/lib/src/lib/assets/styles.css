@@ -112,6 +112,9 @@ body {
   background-color: #1f2937; /* Equivalent to bg-gray-800 */
   color: #ffffff;
 }
+.hidden {
+  display: none;
+}
 
 .layout_sidebar .nav_item.inactive {
   color: #9ca3af; /* Equivalent to text-gray-400 */

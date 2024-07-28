@@ -1,7 +1,17 @@
 <ngx-layout-loading *ngIf="loading" [logo]="logo"></ngx-layout-loading>
 
-<ngx-layout-sidebar *ngIf="renderApp" [footer]="sidebarFooter" [logo]="logo">
-  <ngx-layout-topbar [title]="title" [subTitle]="subtitle" *ngIf="showTopbar">
+<ngx-layout-sidebar
+  *ngIf="renderApp"
+  [footer]="sidebarFooter"
+  [logo]="logo"
+  [debug]="debug"
+>
+  <ngx-layout-topbar
+    [title]="title"
+    [subTitle]="subtitle"
+    *ngIf="showTopbar"
+    [debug]="debug"
+  >
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
   </ngx-layout-topbar>
   <div class="layout_page">

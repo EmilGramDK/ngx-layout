@@ -4,6 +4,7 @@ import { SidebarFooter } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
+import { LayoutService } from "../../layout.service";
 
 @Component({
   selector: "ngx-layout",
@@ -13,6 +14,7 @@ import { LoadingComponent } from "../loading/loading.component";
   imports: [SidebarComponent, TopbarComponent, LoadingComponent, CommonModule],
 })
 export class LayoutComponent {
+  @Input() debug: boolean = false;
   @Input() renderApp: any = true;
   @Input() title?: string;
   @Input() subtitle?: string;
@@ -22,4 +24,18 @@ export class LayoutComponent {
   @Input() sidebarFooter?: SidebarFooter;
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
+
+  constructor(layoutService: LayoutService) {
+    if (this.debug) {
+      console.log("DEBUG LOG FROM LAYOUT COMPONENT");
+      console.log("Debug: ", this.debug);
+      console.log("Render App: ", this.renderApp);
+      console.log("Title: ", this.title);
+      console.log("Subtitle: ", this.subtitle);
+      console.log("Loading: ", this.loading);
+      console.log("Show Topbar: ", this.showTopbar);
+      console.log("Logo: ", this.logo);
+      console.log("Sidebar Footer: ", this.sidebarFooter);
+    }
+  }
 }
