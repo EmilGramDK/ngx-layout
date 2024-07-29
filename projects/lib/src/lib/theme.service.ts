@@ -1,31 +1,37 @@
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
+import { defaultThemeSettings, ThemeSettings } from "./interfaces";
 
 @Injectable({
   providedIn: "root",
 })
-export class LayoutService {
+export class ThemeService {
   private readonly themeKey = "theme";
+  public themeSettings: ThemeSettings = defaultThemeSettings;
   public theme: "light" | "dark" = "dark";
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.initializeTheme();
   }
 
+  setSettings(settings: Partial<ThemeSettings>) {
+    this.themeSettings = { ...this.themeSettings, ...settings };
+  }
+
+  toggleTheme() {
+    const newTheme = this.theme === "light" ? "dark" : "light";
+    this.applyTheme(newTheme);
+  }
+
   private initializeTheme() {
     const savedTheme = this.getStoredTheme();
-    const theme = savedTheme || "dark";
+    const theme = savedTheme || this.themeSettings.defaultTheme;
     this.theme = theme;
     this.applyTheme(theme);
   }
 
   private getStoredTheme(): "light" | "dark" | null {
     return localStorage.getItem(this.themeKey) as "light" | "dark" | null;
-  }
-
-  toggleTheme() {
-    const newTheme = this.theme === "light" ? "dark" : "light";
-    this.applyTheme(newTheme);
   }
 
   private applyTheme(theme: "light" | "dark") {

@@ -5,7 +5,7 @@
     </div>
     <nav class="sidebar_nav">
       <ul role="list" class="nav_list">
-        <li>
+        <li style="flex: 1 1 auto">
           <ul role="list" class="nav_items">
             <li
               *ngFor="let item of routes"
@@ -24,7 +24,7 @@
           </ul>
         </li>
         <li class="footer" *ngIf="footer">
-          <div class="footer_content" (click)="footer.onClick()">
+          <div class="footer_content" (click)="footerOnClick()">
             <div class="footer_text">
               <span class="footer_title">{{ footer.title }}</span>
               <span class="footer_subtitle">{{ footer.subTitle }}</span>

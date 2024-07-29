@@ -5,9 +5,12 @@
   </div>
   <div class="actions">
     <ng-content></ng-content>
-    <button (click)="layoutService.toggleTheme()" *ngIf="showThemeToggle">
-      <i class="pi pi-sun" *ngIf="layoutService.theme === 'dark'"></i>
-      <i class="pi pi-moon" *ngIf="layoutService.theme === 'light'"></i>
+    <button
+      (click)="themeService.toggleTheme()"
+      *ngIf="themeService.themeSettings.showToggle"
+    >
+      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
     </button>
   </div>
 </div>

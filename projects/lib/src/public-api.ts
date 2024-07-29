@@ -1,4 +1,4 @@
-export * from "./lib/layout.service";
+export * from "./lib/theme.service";
 export * from "./lib/components/layout/layout.component";
 export * from "./lib/components/loading/loading.component";
 export * from "./lib/components/sidebar/sidebar.component";

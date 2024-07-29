@@ -1,10 +1,10 @@
 import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { SidebarFooter } from "../../interfaces";
+import { SidebarFooter, ThemeSettings } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
-import { LayoutService } from "../../layout.service";
+import { ThemeService } from "../../theme.service";
 
 @Component({
   selector: "ngx-layout",
@@ -22,10 +22,16 @@ export class LayoutComponent {
   @Input() showTopbar?: any = true;
   @Input() logo?: string = "/assets/logo.png";
   @Input() sidebarFooter?: SidebarFooter;
+  @Input() sidebarFooterOnClick: () => void = () => {
+    console.log("Footer clicked");
+  };
+  @Input() themeSettings: Partial<ThemeSettings> = {};
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
 
-  constructor(layoutService: LayoutService) {
+  constructor(themeService: ThemeService) {
+    themeService.setSettings(this.themeSettings);
+
     if (this.debug) {
       console.log("DEBUG LOG FROM LAYOUT COMPONENT");
       console.log("Debug: ", this.debug);

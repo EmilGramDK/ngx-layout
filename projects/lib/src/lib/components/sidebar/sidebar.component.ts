@@ -14,6 +14,9 @@ export class SidebarComponent {
   @Input() debug: boolean = false;
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
+  @Input() footerOnClick: () => void = () => {
+    console.log("Footer clicked");
+  };
 
   public path: string = "";
 
@@ -26,6 +29,7 @@ export class SidebarComponent {
       console.log("Routes: ", this.routes);
       console.log("Logo: ", this.logo);
       console.log("Footer: ", this.footer);
+      console.log("FooterOnClick: ", this.footerOnClick);
     }
 
     this.router.events.subscribe((val) => {

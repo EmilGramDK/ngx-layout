@@ -69,7 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.5rem; /* Equivalent to gap-y-10 */
-  padding: 1.5rem; /* Equivalent to px-6 pt-6 */
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
 }
 
 .layout_sidebar .logo_container {

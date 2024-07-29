@@ -6,7 +6,20 @@ export interface SidebarRoute extends Route {
 }
 
 export interface SidebarFooter {
-  title: string;
-  subTitle: string;
-  onClick: () => void;
+  title?: string;
+  subTitle?: string;
 }
+
+export interface ThemeSettings {
+  showToggle: boolean;
+  defaultTheme: "light" | "dark";
+  themeToggleSunIcon: string;
+  themeToggleMoonIcon: string;
+}
+
+export const defaultThemeSettings: ThemeSettings = {
+  showToggle: true,
+  defaultTheme: "light",
+  themeToggleSunIcon: "pi pi-sun",
+  themeToggleMoonIcon: "pi pi-moon",
+};

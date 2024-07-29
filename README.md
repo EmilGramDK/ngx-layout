@@ -53,7 +53,9 @@ npm install @emilgramdk/ngx-layout
       title="string"                        Title in the Topbar
       subTitle="string"                     Subtitle in the Topbar
       showTopbar="boolean"                  Hide the topbar
-      sidebarFooter="SidebarFooter"         Pass this to show a footer in the sidebar. {title: string; subTitle: string; onClick: function}
+      sidebarFooter="SidebarFooter"         Pass this to show a footer in the sidebar. {title: string; subTitle: string}
+      sidebarFooterOnClick="function"       Footer onClick function
+      themeSettings="ThemeSettings"
    </ngx-layout>
    ```
 
