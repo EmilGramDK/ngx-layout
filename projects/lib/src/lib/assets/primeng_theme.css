@@ -7742,3 +7742,24 @@
 .p-multiselect {
   background: var(--dark-color);
 }
+.p-panel-content {
+  margin-top: -1rem;
+}
+.p-multiselect-filter-container .p-inputtext {
+  padding: 0.25rem !important;
+}
+.p-multiselect-item {
+  text-transform: uppercase;
+}
+.p-dropdown-filter-container .p-inputtext {
+  padding: 0.25rem !important;
+}
+.p-dropdown-item {
+  text-transform: uppercase;
+}
+.ui-confirmdialog-message {
+  white-space: pre-line;
+}
+p-columnfilterformelement input {
+  padding: 0.5rem;
+}

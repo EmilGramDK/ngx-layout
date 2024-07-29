@@ -30,6 +30,20 @@ body {
   background: var(--extra-color);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--extra-color);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--extra-color);
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
 .layout_page {
   padding: 0.75rem;
   height: calc(100vh - 60px);
