@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { SidebarFooter, SidebarRoute } from "../../interfaces";
 
@@ -14,9 +14,7 @@ export class SidebarComponent {
   @Input() debug: boolean = false;
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
-  @Input() footerOnClick: () => void = () => {
-    console.log("Footer clicked");
-  };
+  @Output() footerOnClick = new EventEmitter<void>();
 
   public path: string = "";
 
@@ -39,5 +37,9 @@ export class SidebarComponent {
 
   goToPage(route: string) {
     this.router.navigate([route]);
+  }
+
+  footerClick() {
+    this.footerOnClick.emit();
   }
 }

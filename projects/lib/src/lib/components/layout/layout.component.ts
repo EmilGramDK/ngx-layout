@@ -1,4 +1,11 @@
-import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
+import {
+  Component,
+  ContentChild,
+  EventEmitter,
+  Input,
+  Output,
+  TemplateRef,
+} from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { SidebarFooter, ThemeSettings } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
@@ -21,11 +28,9 @@ export class LayoutComponent {
   @Input() loading?: any = false;
   @Input() showTopbar?: any = true;
   @Input() logo?: string = "/assets/logo.png";
-  @Input() sidebarFooter?: SidebarFooter;
-  @Input() sidebarFooterOnClick: () => void = () => {
-    console.log("Footer clicked");
-  };
   @Input() themeSettings: Partial<ThemeSettings> = {};
+  @Input() sidebarFooter?: SidebarFooter;
+  @Output() sidebarFooterOnClick = new EventEmitter<void>();
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
 
@@ -43,5 +48,9 @@ export class LayoutComponent {
       console.log("Logo: ", this.logo);
       console.log("Sidebar Footer: ", this.sidebarFooter);
     }
+  }
+
+  footerClick() {
+    this.sidebarFooterOnClick.emit();
   }
 }
