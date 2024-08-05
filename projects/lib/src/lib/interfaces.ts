@@ -5,8 +5,6 @@ export interface SidebarRoute extends Route {
   icon?: string;
 }
 
-export type SidebarRoutes = SidebarRoute[];
-
 export interface SidebarFooter {
   title?: string;
   subTitle?: string;

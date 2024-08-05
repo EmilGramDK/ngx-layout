@@ -28,7 +28,8 @@ npm install @emilgramdk/ngx-layout
 
    ```typescript
    "styles": [
-     "node_modules/@emilgramdk/ngx-layout/lib/assets/styles.css"
+     "node_modules/@emilgramdk/ngx-layout/lib/assets/styles.css",
+     "node_modules/@emilgramdk/ngx-layout/lib/assets/primeng_theme.css" // if using primeng
    ]
    ```
 
@@ -39,7 +40,6 @@ npm install @emilgramdk/ngx-layout
      [loading]="appService.isLoading || !authService.token"
      [renderApp]="!appService.initialLoading && authService.token"
    >
-     <router-outlet></router-outlet>
    </ngx-layout>
    ```
 
@@ -63,7 +63,6 @@ npm install @emilgramdk/ngx-layout
    ```html
    <ngx-layout logo="logo.png">
      <ng-template #topbar> Topbar Button </ng-template>
-     <router-outlet></router-outlet>
    </ngx-layout>
    ```
 

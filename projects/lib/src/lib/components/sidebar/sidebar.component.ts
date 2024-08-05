@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 import { SidebarFooter, SidebarRoute } from "../../interfaces";
 
 @Component({
@@ -11,7 +11,7 @@ import { SidebarFooter, SidebarRoute } from "../../interfaces";
 })
 export class SidebarComponent {
   routes: SidebarRoute[] = [];
-  @Input() debug: boolean = false;
+  @Input() extraRoutes: SidebarRoute[] = [];
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
   @Output() footerOnClick = new EventEmitter<void>();
@@ -21,17 +21,11 @@ export class SidebarComponent {
   constructor(private router: Router) {
     this.routes = this.router.config;
 
-    if (this.debug) {
-      console.log("DEBUG LOG FROM SIDEBAR COMPONENT");
-      console.log("Debug: ", this.debug);
-      console.log("Routes: ", this.routes);
-      console.log("Logo: ", this.logo);
-      console.log("Footer: ", this.footer);
-      console.log("FooterOnClick: ", this.footerOnClick);
-    }
-
-    this.router.events.subscribe((val) => {
-      this.path = this.router.url.replace("/", "");
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // remove first slash
+        this.path = this.router.url.slice(1);
+      }
     });
   }
 

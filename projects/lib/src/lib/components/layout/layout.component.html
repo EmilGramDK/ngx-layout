@@ -5,17 +5,12 @@
   [footer]="sidebarFooter"
   (footerOnClick)="footerClick()"
   [logo]="logo"
-  [debug]="debug"
+  [extraRoutes]="extraRoutes"
 >
-  <ngx-layout-topbar
-    [title]="title"
-    [subTitle]="subtitle"
-    *ngIf="showTopbar"
-    [debug]="debug"
-  >
+  <ngx-layout-topbar [title]="title" [subTitle]="subtitle" *ngIf="showTopbar">
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
   </ngx-layout-topbar>
   <div class="layout_page">
-    <ng-content></ng-content>
+    <router-outlet *ngIf="renderApp"></router-outlet>
   </div>
 </ngx-layout-sidebar>

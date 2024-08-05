@@ -21,6 +21,21 @@
                 {{ item.title }}
               </div>
             </li>
+
+            <li
+              *ngFor="let item of extraRoutes"
+              class="nav_item"
+              [ngClass]="{
+                active: item.path === path,
+                inactive: item.path !== path,
+                hidden: item.hideFromMenu
+              }"
+            >
+              <div (click)="goToPage(item.path!)" class="nav_link">
+                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                {{ item.title }}
+              </div>
+            </li>
           </ul>
         </li>
         <li class="footer" *ngIf="footer">
