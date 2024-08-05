@@ -10,12 +10,11 @@ export class ThemeService {
   public themeSettings: ThemeSettings = defaultThemeSettings;
   public theme: "light" | "dark" = "dark";
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-    this.initializeTheme();
-  }
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   setSettings(settings: Partial<ThemeSettings>) {
     this.themeSettings = { ...this.themeSettings, ...settings };
+    this.initializeTheme();
   }
 
   toggleTheme() {

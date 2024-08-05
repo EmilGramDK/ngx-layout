@@ -248,9 +248,110 @@ body {
 .loading svg path {
   opacity: 0.75;
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
+/* sidebar mobile */
+/* Add burger menu button style */
+/* Add burger menu button style */
+.burger-menu {
+  display: none;
+  position: fixed;
+  height: 60px;
+  padding-left: 1.25rem;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 9999999;
+}
+
+.layout_sidebar_mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+  .layout_sidebar {
+    display: none;
+  }
+  .layout_sidebar_mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #15202b;
+    padding-top: calc(60px + 1.5rem);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide sidebar by default */
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    transition: left 0.3s ease-in-out;
+  }
+  .layout_sidebar_mobile.show {
+    left: 0; /* Slide in sidebar */
+  }
+  .content_area {
+    margin-left: 0;
+  }
+  .layout_page {
+    border-top-right-radius: 0.75rem;
+  }
+}
+
+.nav_list_mobile {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between nav items */
+}
+
+.nav_items_mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between nav items */
+}
+
+.nav_item_mobile {
+  border-radius: 0.375rem; /* Equivalent to rounded-lg */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav_item_mobile.active {
+  background-color: #374151; /* Dark background for active items */
+  color: #ffffff;
+}
+
+.nav_item_mobile.inactive {
+  color: #9ca3af; /* Gray color for inactive items */
+}
+
+.nav_item_mobile.inactive:hover {
+  background-color: #1f2937; /* Darker gray on hover */
+  color: #ffffff;
+}
+
+.nav_link_mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between icon and text */
+  font-size: 1rem; /* Equivalent to text-base */
+  font-weight: 600; /* Equivalent to font-semibold */
+  line-height: 1.5rem; /* Equivalent to leading-6 */
+}
+
 /* loading */

@@ -1,4 +1,5 @@
 <div class="container">
+  <button class="burger-menu" (click)="toggleSidebar()">☰</button>
   <div class="layout_sidebar">
     <div class="logo_container">
       <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
@@ -17,6 +18,54 @@
               }"
             >
               <div (click)="goToPage(item.path!)" class="nav_link">
+                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                {{ item.title }}
+              </div>
+            </li>
+
+            <li
+              *ngFor="let item of extraRoutes"
+              class="nav_item"
+              [ngClass]="{
+                active: item.path === path,
+                inactive: item.path !== path,
+                hidden: item.hideFromMenu
+              }"
+            >
+              <div (click)="goToPage(item.path!)" class="nav_link">
+                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                {{ item.title }}
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="footer" *ngIf="footer">
+          <div class="footer_content" (click)="footerClick()">
+            <div class="footer_text">
+              <span class="footer_title">{{ footer.title }}</span>
+              <span class="footer_subtitle">{{ footer.subTitle }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
+    <nav class="sidebar_nav_mobile">
+      <ul role="list" class="nav_list_mobile">
+        <li style="flex: 1 1 auto">
+          <ul role="list" class="nav_items_mobile">
+            <li
+              *ngFor="let item of routes"
+              class="nav_item_mobile"
+              [ngClass]="{
+                active: item.path === path,
+                inactive: item.path !== path,
+                hidden: item.hideFromMenu
+              }"
+            >
+              <div (click)="goToPage(item.path!, true)" class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>

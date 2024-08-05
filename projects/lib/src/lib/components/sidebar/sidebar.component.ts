@@ -16,6 +16,7 @@ export class SidebarComponent {
   @Input() footer?: SidebarFooter;
   @Output() footerOnClick = new EventEmitter<void>();
 
+  public sidebarVisible: boolean = false;
   public path: string = "";
 
   constructor(private router: Router) {
@@ -29,7 +30,15 @@ export class SidebarComponent {
     });
   }
 
-  goToPage(route: string) {
+  toggleSidebar() {
+    console.log("toggle sidebar");
+    this.sidebarVisible = !this.sidebarVisible;
+  }
+
+  goToPage(route: string, toggleSidebar: boolean = false) {
+    if (toggleSidebar) {
+      this.sidebarVisible = !this.sidebarVisible;
+    }
     this.router.navigate([route]);
   }
 
