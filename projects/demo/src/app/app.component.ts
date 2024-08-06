@@ -1,10 +1,6 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import {
-  LayoutComponent,
-  ThemeService,
-  ThemeSettings,
-} from "@emilgramdk/ngx-layout";
+import { LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
 
 @Component({
   selector: "app-root",

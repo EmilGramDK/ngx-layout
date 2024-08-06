@@ -19,7 +19,7 @@
                 hidden: item.hideFromMenu
               }"
             >
-              <div (click)="goToPage(item.path!)" class="nav_link">
+              <div (click)="goToPage(item.path || '')" class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -34,7 +34,7 @@
                 hidden: item.hideFromMenu
               }"
             >
-              <div (click)="goToPage(item.path!)" class="nav_link">
+              <div (click)="goToPage(item.path || '')" class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -56,6 +56,9 @@
   <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
     <nav class="sidebar_nav_mobile">
       <ul role="list" class="nav_list_mobile">
+        <div class="logo_container">
+          <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
+        </div>
         <li style="flex: 1 1 auto">
           <ul role="list" class="nav_items_mobile">
             <li
@@ -67,7 +70,7 @@
                 hidden: item.hideFromMenu
               }"
             >
-              <div (click)="goToPage(item.path!, true)" class="nav_link_mobile">
+              <div (click)="goToPage(item.path || '')" class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -75,20 +78,22 @@
 
             <li
               *ngFor="let item of extraRoutes"
-              class="nav_item"
+              class="nav_item_mobile"
               [ngClass]="{
                 active: item.path === path,
                 inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
             >
-              <div (click)="goToPage(item.path!)" class="nav_link">
+              <div (click)="goToPage(item.path || '')" class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
             </li>
           </ul>
         </li>
+      </ul>
+      <ul class="footer-container">
         <li class="footer" *ngIf="footer">
           <div class="footer_content" (click)="footerClick()">
             <div class="footer_text">

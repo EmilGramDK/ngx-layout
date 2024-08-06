@@ -36,11 +36,9 @@ export class SidebarComponent {
     this.sidebarVisible = !this.sidebarVisible;
   }
 
-  goToPage(route: string, toggleSidebar: boolean = false) {
-    if (toggleSidebar) {
-      this.sidebarVisible = !this.sidebarVisible;
-    }
+  goToPage(route: string) {
     this.router.navigate([route]);
+    this.sidebarVisible = false;
   }
 
   footerClick() {
