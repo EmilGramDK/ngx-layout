@@ -34,16 +34,13 @@ export class LayoutComponent {
   @Input() loading?: any = false;
   @Input() showTopbar?: any = true;
   @Input() logo?: string = "/assets/logo.png";
-  @Input() themeSettings: Partial<ThemeSettings> = {};
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() sidebarFooter?: SidebarFooter;
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
 
-  constructor(private themeService: ThemeService) {
-    this.themeService.setSettings(this.themeSettings);
-  }
+  constructor(private themeService: ThemeService) {}
 
   footerClick() {
     this.sidebarFooterOnClick.emit();

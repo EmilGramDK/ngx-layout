@@ -1,13 +1,13 @@
 {
   "name": "@emilgramdk/ngx-layout",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build lib && node addReadMe.js",
     "builddev": "ng build lib --configuration development",
-    "publish": "ng build && node addReadMe.js && cd dist/lib && npm publish --access public && cd ../..",
-    "watch": "ng build --watch --configuration development",
+    "publish": "ng build lib && node addReadMe.js && cd dist/lib && npm publish --access public && cd ../..",
+    "watch": "ng build lib --watch --configuration development",
     "test": "ng test"
   },
   "private": false,

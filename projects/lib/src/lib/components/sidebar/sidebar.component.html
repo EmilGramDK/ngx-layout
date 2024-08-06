@@ -1,5 +1,7 @@
 <div class="container">
-  <button class="burger-menu" (click)="toggleSidebar()">☰</button>
+  <button class="burger-menu" (click)="toggleSidebar()">
+    <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
+  </button>
   <div class="layout_sidebar">
     <div class="logo_container">
       <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />

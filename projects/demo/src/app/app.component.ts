@@ -14,15 +14,4 @@ import {
 })
 export class AppComponent {
   title = "test_project";
-
-  public themeSettings: ThemeSettings = {
-    defaultTheme: "dark",
-    showToggle: true,
-    themeToggleSunIcon: "pi pi-sun",
-    themeToggleMoonIcon: "pi pi-clock",
-  };
-
-  constructor(private themeService: ThemeService) {
-    this.themeService.setSettings(this.themeSettings);
-  }
 }
