@@ -1,6 +1,5 @@
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
-import { defaultThemeSettings, ThemeSettings } from "./interfaces";
 import { LAYOUT_CONFIG, LayoutConfig } from "./config";
 import { Title } from "@angular/platform-browser";
 

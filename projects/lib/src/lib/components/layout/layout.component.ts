@@ -7,7 +7,7 @@ import {
   TemplateRef,
 } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { SidebarFooter, SidebarRoute, ThemeSettings } from "../../interfaces";
+import { SidebarFooter, SidebarRoute } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
