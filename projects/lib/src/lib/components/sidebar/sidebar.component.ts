@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { SidebarFooter, SidebarRoute } from "../../interfaces";
+import { ThemeService } from "../../theme.service";
 
 @Component({
   selector: "ngx-layout-sidebar",
@@ -16,9 +17,10 @@ export class SidebarComponent {
   @Input() footer?: SidebarFooter;
   @Output() footerOnClick = new EventEmitter<void>();
 
+  public sidebarVisible: boolean = false;
   public path: string = "";
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public themeService: ThemeService) {
     this.routes = this.router.config;
 
     this.router.events.subscribe((event) => {
@@ -29,8 +31,14 @@ export class SidebarComponent {
     });
   }
 
+  toggleSidebar() {
+    console.log("toggle sidebar");
+    this.sidebarVisible = !this.sidebarVisible;
+  }
+
   goToPage(route: string) {
     this.router.navigate([route]);
+    this.sidebarVisible = false;
   }
 
   footerClick() {

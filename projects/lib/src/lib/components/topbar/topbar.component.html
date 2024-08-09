@@ -7,7 +7,7 @@
     <ng-content></ng-content>
     <button
       (click)="themeService.toggleTheme()"
-      *ngIf="themeService.themeSettings.showToggle"
+      *ngIf="themeService.layoutConfig.showToggle"
     >
       <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
       <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>

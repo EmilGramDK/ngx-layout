@@ -55,13 +55,12 @@ npm install @emilgramdk/ngx-layout
       showTopbar="boolean"                  Hide the topbar
       sidebarFooter="SidebarFooter"         Pass this to show a footer in the sidebar. {title: string; subTitle: string}
       sidebarFooterOnClick="function"       Footer onClick function
-      themeSettings="ThemeSettings"
    </ngx-layout>
    ```
 
 4. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
    ```html
-   <ngx-layout logo="logo.png">
+   <ngx-layout>
      <ng-template #topbar> Topbar Button </ng-template>
    </ngx-layout>
    ```
