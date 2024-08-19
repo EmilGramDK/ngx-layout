@@ -1,9 +1,42 @@
 <ngx-layout
+  logo="logo.png"
   [sidebarFooter]="{
     title: 'Footer Title',
     subTitle: 'Footer Subtitle'
   }"
-  logo="logo.png"
-  [groupRoutes]="groupRoutes"
 >
+<ng-template #topbar>
+  <div style="display:flex;flex-direction: row;gap:5px;">
+    <div>
+      <p-autoComplete 
+        [(ngModel)]="selectedItem" 
+        [suggestions]="suggestions"
+        (completeMethod)="search($event)" 
+        [disabled]="false"
+        placeholder="Search">
+      </p-autoComplete>
+    </div>  
+    <div>
+      <p-dropdown 
+        [options]="cities" 
+        [(ngModel)]="selectedCity" 
+        optionLabel="name" 
+        placeholder="Select a City">
+      </p-dropdown>
+    </div>
+    <div>
+      <p-cascadeSelect 
+      [(ngModel)]="selectedCity" 
+      [options]="countries" 
+      optionLabel="cname" 
+      optionGroupLabel="name" 
+      [optionGroupChildren]="['states', 'cities']" 
+      [style]="{ minWidth: '14rem' }"
+      placeholder="Select a City" />
+    </div>
+    <div>
+      <p-calendar [(ngModel)]="date" />
+    </div>
+  </div>
+</ng-template>
 </ngx-layout>

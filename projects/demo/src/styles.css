@@ -1,5 +1,6 @@
 /* import ../../lib/src/lib/assets/styles.css file */
 @import url(../../lib/src/lib/assets/styles.css);
+@import url(../../lib/src/lib/assets/primeng_theme.css);
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
