@@ -14,12 +14,12 @@
               *ngFor="let item of routes"
               class="nav_item"
               [ngClass]="{
-                active: item.path === path,
-                inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
+              [routerLink]="item.path"
+              routerLinkActive="active"
             >
-              <div (click)="goToPage(item.path || '')" class="nav_link">
+              <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -29,12 +29,12 @@
               *ngFor="let item of extraRoutes"
               class="nav_item"
               [ngClass]="{
-                active: item.path === path,
-                inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
+              [routerLink]="item.path"
+              routerLinkActive="active"
             >
-              <div (click)="goToPage(item.path || '')" class="nav_link">
+              <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -51,12 +51,12 @@
               *ngFor="let item of group.routes"
               class="nav_item"
               [ngClass]="{
-                active: item.path === path,
-                inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
+              [routerLink]="item.path"
+              routerLinkActive="active"
             >
-              <div (click)="goToPage(item.path || '')" class="nav_link">
+              <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -90,12 +90,12 @@
               *ngFor="let item of routes"
               class="nav_item_mobile"
               [ngClass]="{
-                active: item.path === path,
-                inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
+              [routerLink]="item.path"
+              routerLinkActive="active"
             >
-              <div (click)="goToPage(item.path || '')" class="nav_link_mobile">
+              <div class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>
@@ -105,12 +105,12 @@
               *ngFor="let item of extraRoutes"
               class="nav_item_mobile"
               [ngClass]="{
-                active: item.path === path,
-                inactive: item.path !== path,
                 hidden: item.hideFromMenu
               }"
+              [routerLink]="item.path"
+              routerLinkActive="active"
             >
-              <div (click)="goToPage(item.path || '')" class="nav_link_mobile">
+              <div class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
                 {{ item.title }}
               </div>

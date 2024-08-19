@@ -1990,8 +1990,8 @@
   }
 
   .p-selectbutton .p-button {
-    background: var(--background);
-    border: 1px solid var(--background);
+    background: var(--card);
+    border: 1px solid var(--card);
     color: var(--primary-text);
     transition: background-color 0.2s, color 0.2s, border-color 0.2s,
       box-shadow 0.2s;
@@ -2016,7 +2016,7 @@
   .p-selectbutton .p-button.p-highlight {
     background: #6366f1;
     border-color: #6366f1;
-    color: var(--background);
+    color: #ffffff;
   }
   .p-selectbutton .p-button.p-highlight .p-button-icon-left,
   .p-selectbutton .p-button.p-highlight .p-button-icon-right {
@@ -7684,25 +7684,32 @@
   }
 
   .p-button:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b1b3f8, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b1b3f8,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-secondary:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b0b9c6, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b0b9c6,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-success:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #88eaac, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #88eaac,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-info:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #83d3f8, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #83d3f8,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-warning:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #fcb98b, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #fcb98b,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-help:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #d4aafb, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #d4aafb,
+      0 1px 2px 0 black;
   }
   .p-button.p-button-danger:enabled:focus {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #f7a2a2, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #f7a2a2,
+      0 1px 2px 0 black;
   }
 
   .p-datatable .p-datatable-tbody > tr.p-datatable-dragpoint-top > td {
@@ -7713,7 +7720,8 @@
   }
 
   .p-speeddial-item.p-focus > .p-speeddial-action {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b1b3f8, 0 1px 2px 0 black;
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #b1b3f8,
+      0 1px 2px 0 black;
   }
 
   .p-toast-message {

@@ -1,6 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Router, NavigationEnd } from "@angular/router";
+import {
+  Router,
+  NavigationEnd,
+  RouterLink,
+  RouterLinkActive,
+} from "@angular/router";
 import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
 
@@ -8,7 +13,7 @@ import { ThemeService } from "../../theme.service";
   selector: "ngx-layout-sidebar",
   templateUrl: "./sidebar.component.html",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
 })
 export class SidebarComponent {
   routes: SidebarRoute[] = [];
@@ -19,17 +24,9 @@ export class SidebarComponent {
   @Output() footerOnClick = new EventEmitter<void>();
 
   public sidebarVisible: boolean = false;
-  public path: string = "";
 
   constructor(private router: Router, public themeService: ThemeService) {
     this.routes = this.router.config;
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        // remove first slash
-        this.path = this.router.url.slice(1);
-      }
-    });
   }
 
   toggleSidebar() {
