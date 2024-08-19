@@ -7,7 +7,7 @@ import {
   TemplateRef,
 } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -29,11 +29,10 @@ import { RouterOutlet } from "@angular/router";
 })
 export class LayoutComponent {
   @Input() renderApp: any = true;
-  @Input() title?: string;
-  @Input() subtitle?: string;
   @Input() loading?: any = false;
   @Input() showTopbar?: any = true;
   @Input() logo?: string = "/assets/logo.png";
+  @Input() groupRoutes: GroupRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() sidebarFooter?: SidebarFooter;
   @Output() sidebarFooterOnClick = new EventEmitter<void>();

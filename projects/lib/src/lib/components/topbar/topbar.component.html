@@ -1,16 +1,13 @@
 <div class="layout_topbar">
-  <div class="title_section">
-    <p class="title">{{ title }}</p>
-    <span class="subtitle">{{ subTitle }}</span>
-  </div>
-  <div class="actions">
+  <div style="flex: 1 1 auto">
     <ng-content></ng-content>
-    <button
-      (click)="themeService.toggleTheme()"
-      *ngIf="themeService.layoutConfig.showToggle"
-    >
-      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
-      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
-    </button>
   </div>
+
+  <button
+    (click)="themeService.toggleTheme()"
+    *ngIf="themeService.layoutConfig.showToggle"
+  >
+    <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+    <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+  </button>
 </div>

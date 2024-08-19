@@ -9,3 +9,8 @@ export interface SidebarFooter {
   title?: string;
   subTitle?: string;
 }
+
+export interface GroupRoute {
+  title: string;
+  routes: SidebarRoute[];
+}

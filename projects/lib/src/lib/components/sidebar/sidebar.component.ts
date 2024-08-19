@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
-import { SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
 
 @Component({
@@ -13,6 +13,7 @@ import { ThemeService } from "../../theme.service";
 export class SidebarComponent {
   routes: SidebarRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
+  @Input() groupRoutes: GroupRoute[] = [];
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
   @Output() footerOnClick = new EventEmitter<void>();

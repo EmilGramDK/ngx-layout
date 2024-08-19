@@ -1,6 +1,10 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
+import {
+  GroupRoute,
+  LayoutComponent,
+  ThemeService,
+} from "@emilgramdk/ngx-layout";
 
 @Component({
   selector: "app-root",
@@ -10,4 +14,15 @@ import { LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
 })
 export class AppComponent {
   title = "test_project";
+
+  public groupRoutes: GroupRoute[] = [
+    {
+      title: "TEST PROJECT",
+      routes: [
+        {
+          title: "Components",
+        },
+      ],
+    },
+  ];
 }

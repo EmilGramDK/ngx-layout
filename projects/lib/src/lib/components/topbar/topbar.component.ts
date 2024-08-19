@@ -9,8 +9,5 @@ import { ThemeService } from "../../theme.service";
   imports: [CommonModule],
 })
 export class TopbarComponent {
-  @Input() title?: string;
-  @Input() subTitle?: string;
-
   constructor(public themeService: ThemeService) {}
 }
