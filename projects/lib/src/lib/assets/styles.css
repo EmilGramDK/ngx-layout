@@ -20,15 +20,17 @@ hover-coler
   --background: #f1f5f9;
   --card: #ffffff;
   --sidebar: #ffffff;
-  --primary-text: #333333;
+  --forground: #374151;
+  --secondary-color: #64748b;
   --border-color: #dddddd;
-  --hover-color: #f0f0f0;
+  --hover-color: #f1f5f9;
   --button-primary: black;
 }
 body.dark {
   --background: #303c49;
   --card: #15202b;
-  --primary-text: white;
+  --forground: #ffffffde;
+  --secondary-color: #8fa1b3;
   --sidebar: #15202b;
   --border-color: #374151;
   --hover-color: #1f2937;
@@ -37,18 +39,18 @@ body.dark {
 
 body {
   background: var(--sidebar);
-  color: var(--primary-text);
+  color: var(--forground);
   height: 100vh;
   overflow: hidden;
 }
 
 .card-color {
   background: var(--card);
-  color: var(--primary-text);
+  color: var(--forground);
 }
 .background-color {
   background: var(--background);
-  color: var(--primary-text);
+  color: var(--forground);
 }
 
 ::-webkit-scrollbar {
@@ -100,7 +102,7 @@ body {
   top: 0;
   left: 0;
   background: var(--sidebar);
-  color: var(--primary-text);
+  color: var(--forground);
   display: flex;
   flex-direction: column;
   gap: 2.5rem; /* Equivalent to gap-y-10 */
@@ -154,7 +156,7 @@ body {
 
 .layout_sidebar .nav_item.active {
   background-color: var(--hover-color); /* Equivalent to bg-gray-800 */
-  color: var(--primary-text);
+  color: var(--forground);
 }
 .hidden {
   display: none;
@@ -166,7 +168,7 @@ body {
 
 .layout_sidebar .nav_item.inactive:hover {
   background-color: var(--hover-color); /* Equivalent to bg-gray-800 */
-  color: var(--primary-text);
+  color: var(--forground);
 }
 
 .layout_sidebar .nav_link {
@@ -201,7 +203,7 @@ body {
   font-size: 0.875rem; /* Equivalent to text-sm */
   font-weight: 600; /* Equivalent to font-semibold */
   line-height: 1.5rem; /* Equivalent to leading-6 */
-  color: var(--primary-text);
+  color: var(--forground);
   cursor: pointer;
 }
 
@@ -220,7 +222,7 @@ body {
 
 .layout_topbar {
   background: var(--sidebar);
-  color: var(--primary-text);
+  color: var(--forground);
   height: 60px;
   width: 100%;
   display: flex;
