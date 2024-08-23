@@ -24,7 +24,7 @@ hover-coler
   --foreground-secondary: #5a6478;
   --border-color: #dddddd;
   --hover-color: #f1f5f9;
-  --button-primary: black;
+  --button-primary: #25556a;
 }
 body.dark {
   --background: #303c49;
@@ -34,12 +34,12 @@ body.dark {
   --sidebar: #15202b;
   --border-color: #374151;
   --hover-color: #1f2937;
-  --button-primary: white;
+  --button-primary: #c5c6c6;
 }
 
 body {
   background: var(--sidebar);
-  color: var(--foreground);
+  color: var(--foreground) !important;
   height: 100vh;
   overflow: hidden;
   border-color: var(--border-color) !important;
