@@ -20,8 +20,8 @@ hover-coler
   --background: #f1f5f9;
   --card: #ffffff;
   --sidebar: #ffffff;
-  --forground: #374151;
-  --secondary-color: #64748b;
+  --foreground: #374151;
+  --foreground-secondary: #5a6478;
   --border-color: #dddddd;
   --hover-color: #f1f5f9;
   --button-primary: black;
@@ -29,8 +29,8 @@ hover-coler
 body.dark {
   --background: #303c49;
   --card: #15202b;
-  --forground: #ffffffde;
-  --secondary-color: #8fa1b3;
+  --foreground: #ffffffcc;
+  --foreground-secondary: #ffffffa6;
   --sidebar: #15202b;
   --border-color: #374151;
   --hover-color: #1f2937;
@@ -39,32 +39,36 @@ body.dark {
 
 body {
   background: var(--sidebar);
-  color: var(--forground);
+  color: var(--foreground);
   height: 100vh;
   overflow: hidden;
+  border-color: var(--border-color) !important;
 }
 
 .card-color {
   background: var(--card);
-  color: var(--forground);
+  color: var(--foreground);
+}
+td {
+  color: var(--foreground-secondary);
 }
 .background-color {
   background: var(--background);
-  color: var(--forground);
+  color: var(--foreground);
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--extra-color);
+  background: var(--back);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--extra-color);
+  background: var(--background);
 }
 ::-webkit-scrollbar-track {
-  background: var(--secondary-color);
+  background: var(--card);
 }
 
 .layout_page {
@@ -74,6 +78,8 @@ body {
   overflow-y: auto;
   border-top-left-radius: 0.75rem;
   background: var(--background) !important;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); 
+  margin-left: 4px;
 }
 
 .fullscreen {
@@ -102,10 +108,10 @@ body {
   top: 0;
   left: 0;
   background: var(--sidebar);
-  color: var(--forground);
+  color: var(--foreground);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* Equivalent to gap-y-10 */
+  gap: 2.5rem; 
   padding: 1.5rem 1.5rem 0.5rem 1.5rem;
 }
 
@@ -156,7 +162,7 @@ body {
 
 .layout_sidebar .nav_item.active {
   background-color: var(--hover-color); /* Equivalent to bg-gray-800 */
-  color: var(--forground);
+  color: var(--foreground);
 }
 .hidden {
   display: none;
@@ -168,7 +174,7 @@ body {
 
 .layout_sidebar .nav_item.inactive:hover {
   background-color: var(--hover-color); /* Equivalent to bg-gray-800 */
-  color: var(--forground);
+  color: var(--foreground);
 }
 
 .layout_sidebar .nav_link {
@@ -203,7 +209,7 @@ body {
   font-size: 0.875rem; /* Equivalent to text-sm */
   font-weight: 600; /* Equivalent to font-semibold */
   line-height: 1.5rem; /* Equivalent to leading-6 */
-  color: var(--forground);
+  color: var(--foreground);
   cursor: pointer;
 }
 
@@ -222,7 +228,7 @@ body {
 
 .layout_topbar {
   background: var(--sidebar);
-  color: var(--forground);
+  color: var(--foreground);
   height: 60px;
   width: 100%;
   display: flex;

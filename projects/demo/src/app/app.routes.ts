@@ -1,5 +1,6 @@
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
+import { ToolBarComponent } from "./toolbar/toolbar.component";
 
 export const routes: Routes = [
   {
@@ -8,8 +9,8 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    title: "Home 2",
+    title: "Toolbar",
     path: "home2",
-    component: HomeComponent,
+    component: ToolBarComponent,
   },
 ];

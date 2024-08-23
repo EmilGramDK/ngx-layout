@@ -6,7 +6,8 @@
   }"
 >
 <ng-template #topbar>
-  <div style="display:flex;flex-direction: row;gap:5px;">
+
+  <div style="width: 100%; height: auto; display: flex; flex-direction: row; justify-content: right; align-items: center; gap:20px; padding-right: 15px;">
     <div>
       <p-autoComplete 
         [(ngModel)]="selectedItem" 
@@ -17,6 +18,12 @@
       </p-autoComplete>
     </div>  
     <div>
+      <p-calendar [(ngModel)]="date"
+      placeholder="Pick a date"
+      >
+      </p-calendar>
+    </div>
+    <div>
       <p-dropdown 
         [options]="cities" 
         [(ngModel)]="selectedCity" 
@@ -24,19 +31,7 @@
         placeholder="Select a City">
       </p-dropdown>
     </div>
-    <div>
-      <p-cascadeSelect 
-      [(ngModel)]="selectedCity" 
-      [options]="countries" 
-      optionLabel="cname" 
-      optionGroupLabel="name" 
-      [optionGroupChildren]="['states', 'cities']" 
-      [style]="{ minWidth: '14rem' }"
-      placeholder="Select a City" />
-    </div>
-    <div>
-      <p-calendar [(ngModel)]="date" />
-    </div>
   </div>
+  
 </ng-template>
 </ngx-layout>
