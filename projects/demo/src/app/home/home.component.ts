@@ -1,11 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { TableModule } from "primeng/table";
+import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   standalone:true,
-  imports: [TableModule]
+  imports: [
+    TableModule,
+    ToolbarModule
+  ]
 })
 export class HomeComponent implements OnInit {
 

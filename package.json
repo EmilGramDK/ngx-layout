@@ -1,6 +1,6 @@
 {
   "name": "@emilgramdk/ngx-layout",
-  "version": "1.0.22",
+  "version": "1.0.27",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,6 +22,7 @@
     "@angular/router": "^18.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.9",
+    "quill": "^2.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -9,6 +9,11 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { CalendarModule } from 'primeng/calendar';
 import { ListboxModule } from 'primeng/listbox';  // Import ListboxModule
 
+// Importing PrimeNG Modules for Table and Tooltip
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { TooltipModule } from 'primeng/tooltip';
+
 @Component({
   selector: "app-root",
   standalone: true,
@@ -21,7 +26,12 @@ import { ListboxModule } from 'primeng/listbox';  // Import ListboxModule
     TreeSelectModule,
     CascadeSelectModule,
     CalendarModule,
-    ListboxModule  // Add ListboxModule to imports
+    ListboxModule,  // Add ListboxModule to imports
+
+    // Adding PrimeNG Table, Panel, and Tooltip modules
+    TableModule,
+    PanelModule,
+    TooltipModule
   ],
   templateUrl: "./app.component.html",
 })
@@ -38,6 +48,42 @@ export class AppComponent {
 
   countries: any[] = [];
   date: Date | null = null;
+
+  components = [
+    {
+      name: 'Component A',
+      description: 'This is a description for Component A.',
+      owner: 'Owner 1',
+      value: '123',
+      unit: 'kg',
+      offStdValue: '10',
+      type: 'str'
+    },
+    {
+      name: 'Component B',
+      description: 'This is a description for Component B.',
+      owner: 'Owner 2',
+      value: '456',
+      unit: 'm',
+      offStdValue: '5',
+      type: 'bool'
+    },
+    {
+      name: 'Component C',
+      description: 'This is a description for Component C.',
+      owner: 'Owner 3',
+      value: '789',
+      unit: 'cm',
+      offStdValue: '2',
+      type: 'str'
+    }
+  ];
+
+  options = [
+    { label: 'Abs', value: 'abs' },
+    { label: 'Rel', value: 'rel' },
+    { label: 'Fac', value: 'fac' },
+  ];
 
   constructor() {
     this.cities = [
