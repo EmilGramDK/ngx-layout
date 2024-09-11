@@ -31,12 +31,13 @@ body.dark {
 body {
   background: var(--dark-bg);
   color: var(--foreground) !important;
+  border-color: var(--border-color) !important;
   height: 100vh;
   overflow: hidden;
 }
 
 * {
-  border-color: var(--border-color) !important;
+  border-color: var(--border-color);
 }
 
 hr {
