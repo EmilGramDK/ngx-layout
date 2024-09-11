@@ -1,5 +1,7 @@
 # Layout for Angular
 
+_This project is currently a work in progress, and significant updates or breaking changes are anticipated as development continues. We are actively refining and improving the library, so please be aware that functionality may evolve, and existing features could be modified or replaced in future releases._
+
 ## Overview
 
 The **ngx-layout** library provides a ready-to-use layout template for Angular applications, featuring a sidebar and a dark/light mode toggle. This library streamlines the process of implementing a consistent layout across projects, saving development time and ensuring a uniform user experience.

@@ -7,6 +7,7 @@ export const routes: Routes = [
     title: "Home",
     path: "",
     component: HomeComponent,
+    pathMatch: "full",
   },
   {
     title: "Toolbar",
