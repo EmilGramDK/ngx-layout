@@ -6,43 +6,6 @@
   }"
 >
   <ng-template #topbar>
-    <p>Hej</p>
-
-    <div
-      style="
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        align-items: center;
-        gap: 20px;
-        padding-right: 15px;
-      "
-    >
-      <hr style="width: 100%; margin: 0px" />
-      <div>
-        <p-autoComplete
-          [(ngModel)]="selectedItem"
-          [suggestions]="suggestions"
-          (completeMethod)="search($event)"
-          [disabled]="false"
-          placeholder="Search"
-        >
-        </p-autoComplete>
-      </div>
-      <div>
-        <p-calendar [(ngModel)]="date" placeholder="Pick a date"> </p-calendar>
-      </div>
-      <div>
-        <p-dropdown
-          [options]="cities"
-          [(ngModel)]="selectedCity"
-          optionLabel="name"
-          placeholder="Select a City"
-        >
-        </p-dropdown>
-      </div>
-    </div>
+    <input type="text" placeholder="Hej.." class="surface-bg" />
   </ng-template>
 </ngx-layout>

@@ -98,6 +98,7 @@
               [routerLink]="item.path"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="hideSidebar()"
             >
               <div class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
@@ -114,6 +115,7 @@
               [routerLink]="item.path"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="hideSidebar()"
             >
               <div class="nav_link_mobile">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>

@@ -34,6 +34,10 @@ export class SidebarComponent {
     this.sidebarVisible = !this.sidebarVisible;
   }
 
+  hideSidebar() {
+    this.sidebarVisible = false;
+  }
+
   goToPage(route: string) {
     this.router.navigate([route]);
     this.sidebarVisible = false;
