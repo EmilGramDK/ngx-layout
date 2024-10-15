@@ -1,6 +1,6 @@
-<div class="layout_topbar">
+<div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
   <div style="flex: 1 1 auto">
-    <ng-content></ng-content>
+        <ng-content></ng-content>
   </div>
 
   <button

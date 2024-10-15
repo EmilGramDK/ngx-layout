@@ -35,6 +35,7 @@ export class LayoutComponent {
   @Input() groupRoutes: GroupRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() sidebarFooter?: SidebarFooter;
+  @Input() topbarHeight: number = 60;
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;

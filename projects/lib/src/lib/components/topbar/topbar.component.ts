@@ -9,6 +9,7 @@ import { ThemeService } from "../../theme.service";
   imports: [CommonModule],
 })
 export class TopbarComponent {
+[x: string]: any;
 
   @Input({required:true}) topbarHeight!: number;
 

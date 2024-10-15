@@ -283,7 +283,6 @@ td {
 .layout_topbar {
   background: var(--dark-bg);
   color: var(--dark-foreground);
-  height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
