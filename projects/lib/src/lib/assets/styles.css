@@ -3,6 +3,7 @@
   --dark-surface: #303c49;
   --dark-foreground: #ffffffcc;
   --white-color: #ffffffcc;
+  --button-white : #ffffff;
 
   --background: #f1f5f9;
   --card: #ffffff;
@@ -54,7 +55,7 @@ body.dark {
 }
 .btn-secondary {
   background: var(--secondary);
-  color: var(--white-color);
+  color: var(--button-white);
   border-radius: 0.375rem;
   padding: 0.5rem 1rem;
 }
