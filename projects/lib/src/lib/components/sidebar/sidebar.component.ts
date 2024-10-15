@@ -21,6 +21,8 @@ export class SidebarComponent {
   @Input() groupRoutes: GroupRoute[] = [];
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
+  @Input(({required:true})) sidebarHide!: any;
+
   @Output() footerOnClick = new EventEmitter<void>();
 
   public sidebarVisible: boolean = false;
@@ -28,6 +30,8 @@ export class SidebarComponent {
   constructor(private router: Router, public themeService: ThemeService) {
     this.routes = this.router.config;
   }
+
+
 
   toggleSidebar() {
     console.log("toggle sidebar");

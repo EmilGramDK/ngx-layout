@@ -168,6 +168,14 @@ td {
   padding: 1.5rem 1.5rem 0.5rem 1.5rem;
 }
 
+.layout_sidebar.hidden {
+  display: none;
+}
+
+.layout_sidebar.hidden ~ .content_area {
+  margin-left: 0;
+}
+
 .layout_sidebar .logo_container {
   display: flex;
   height: 4rem;
