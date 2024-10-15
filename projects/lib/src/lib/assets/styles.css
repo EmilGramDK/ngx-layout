@@ -12,6 +12,9 @@
   --primary: #28b9da;
   --secondary: #e40045;
   --surface: #f1f5f9;
+  --surface-text: #303c49;
+
+  --scrollbar-color: rgba(0,0,0,0.15);
 }
 
 body.dark {
@@ -22,6 +25,9 @@ body.dark {
   --primary: #28b9da;
   --secondary: #e40045;
   --surface: #303c49;
+  --surface-text: #ffffffcc;
+
+  --scrollbar-color: rgba(255,255,255,0.15);
 }
 
 .dark-bg {
@@ -108,6 +114,10 @@ td {
   color: var(--foreground-secondary);
 }
 
+* {
+  scrollbar-color: var(--scrollbar-color) transparent;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -120,6 +130,7 @@ td {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--background);
 }
+
 ::-webkit-scrollbar-track {
   background: var(--card);
 }
@@ -366,6 +377,15 @@ td {
   .layout_sidebar {
     display: none;
   }
+  .helpButton p {
+    display: none;
+  }
+  .helpButton {
+    padding: 10px 10px !important;
+  }
+  .helpButton i {
+    margin-right: 0px !important;
+  }
   .layout_sidebar_mobile {
     display: flex;
     flex-direction: column;
@@ -510,4 +530,78 @@ table tbody tr:first-child td {
 }
 .p-tabview-nav a {
   background: var(--card);
+}
+
+.topbarButton {
+  display: inline-flex; /* Use inline-flex to ensure it stays on one line */
+  align-items: center; /* Vertically center the icon and text */
+  justify-content: center; /* Horizontally center the content */
+  width: auto; /* Allow the button to adjust based on content size */
+  font-size: 12px; 
+  font-weight: bold; 
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--surface); /* Primary button color */
+  color: var(--surface-text);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.darkmodeButton {
+  padding: 10px 10px; /* Add padding for a nice clickable area */
+  background-color: var(--surface); /* Primary button color */
+  color: var(--surface-text);/* Primary button color */
+}
+
+.helpButton {
+  padding: 10px 20px; /* Add padding for a nice clickable area */
+  
+}
+
+.helpButton i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 16px; /* Adjust icon size to match the text */
+}
+
+.topbarButton:hover {
+  transform: translateY(-1px); /* Slight lift effect on hover */
+}
+
+.topbarButton:active {
+  background-color: #136b80; /* Darker blue when active */
+  transform: translateY(0); /* Reset on click */
+}
+
+.popup-card {
+  width: 300px;
+  padding: 20px;
+  background-color: var(--surface);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.popup-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.close-btn:hover {
+  color: #c82333;
 }

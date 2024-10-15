@@ -1,13 +1,21 @@
 <div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
   <div style="flex: 1 1 auto">
-        <ng-content></ng-content>
   </div>
 
-  <button
-    (click)="themeService.toggleTheme()"
-    *ngIf="themeService.layoutConfig.showToggle"
-  >
-    <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
-    <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+  <button (click)="helpService.toggleHelp()" class="helpButton topbarButton" style="margin-right: 10px;">
+    <i class="pi pi-info-circle"></i>
+    <p class=" ">HELP & INFO</p>
   </button>
-</div>
+
+
+  <div #helpContainer></div>
+  
+    <button class="topbarButton darkmodeButton"
+      (click)="themeService.toggleTheme()"
+      *ngIf="themeService.layoutConfig.showToggle"
+    >
+      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+    </button>
+  </div>
+  

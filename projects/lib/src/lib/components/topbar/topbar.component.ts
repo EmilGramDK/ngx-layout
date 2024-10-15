@@ -1,6 +1,8 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ThemeService } from "../../theme.service";
+import { HelpButtonComponent } from "./helpButton/helpButton.component";
+import { HelpService } from "./helpButton/helpService";
 
 @Component({
   selector: "ngx-layout-topbar",
@@ -9,9 +11,17 @@ import { ThemeService } from "../../theme.service";
   imports: [CommonModule],
 })
 export class TopbarComponent {
-[x: string]: any;
+  @Input({ required: true }) topbarHeight!: number;
 
-  @Input({required:true}) topbarHeight!: number;
+  @ViewChild('helpContainer', { read: ViewContainerRef }) helpContainer!: ViewContainerRef;
 
-  constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService, private helpService: HelpService, private resolver: ComponentFactoryResolver) {
+    this.helpService.setHelpComponentLoader(this.loadHelpComponent.bind(this));
+  }
+
+  loadHelpComponent() {
+    const factory = this.resolver.resolveComponentFactory(HelpButtonComponent);
+    this.helpContainer.clear(); // Clear previous help content
+    this.helpContainer.createComponent(factory); // Dynamically load HelpButtonComponent
+  }
 }

@@ -52,3 +52,8 @@ export interface LayoutConfiguration {
    */
   config?: LayoutConfig;
 }
+
+export const config = {
+  arasBaseURL: 'https://aras.md-man.biz/InnovatorServer/'
+};
+
