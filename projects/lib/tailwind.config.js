@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./projects/lib/src/**/*.{html,ts}", // Include your library components here
-    "./src/**/*.{html,ts}", // Main Angular app
+    "./lib/components/**/*.{html,ts}", // Include your library components here
+    "./src/lib/**/*.{html,ts}", // Main Angular app
   ],
   theme: {
     extend: {},

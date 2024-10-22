@@ -1,22 +1,11 @@
-<div class="p-4 bg-blue-500 border-4 border-red-500">
-  This is a Tailwind-styled component!
-</div>
-
 <div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
   <div style="flex: 1 1 auto">
-  </div>
-
-  <div class="p-4 m-4 bg-blue-500 border-4 border-red-500">
-    This is a Tailwind-styled component!
   </div>
 
   <button class="helpButton topbarButton" style="margin-right: 10px;">
     <i class="pi pi-info-circle"></i>
     <p class=" ">HELP & INFO</p>
   </button>
-
-
-  <div #helpContainer></div>
   
     <button class="topbarButton darkmodeButton"
       (click)="themeService.toggleTheme()"
