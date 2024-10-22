@@ -13,6 +13,7 @@ import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
 import { ThemeService } from "../../theme.service";
 import { RouterOutlet } from "@angular/router";
+import { DialogModule } from "primeng/dialog";
 
 @Component({
   selector: "ngx-layout",
@@ -25,6 +26,7 @@ import { RouterOutlet } from "@angular/router";
     LoadingComponent,
     CommonModule,
     RouterOutlet,
+    DialogModule,
   ],
 })
 export class LayoutComponent {
@@ -37,6 +39,7 @@ export class LayoutComponent {
   @Input() sidebarFooter?: SidebarFooter;
   @Input() topbarHeight: number = 60;
   @Input() sidebarHide?: any = false;
+  @Input() HelpCardData?: { description: string; arasURL: string; userGuideURL: string; };
 
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 

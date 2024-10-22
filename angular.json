@@ -59,8 +59,7 @@
             "styles": [
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css",
-              "projects/demo/src/styles.css",
-              "projects/lib/src/lib/styles.css"
+              "projects/demo/src/styles.css"
             ],
             "scripts": []
           },

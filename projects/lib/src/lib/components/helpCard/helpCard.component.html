@@ -1,0 +1,103 @@
+<div class="mx-auto p-4 surface-bg rounded-lg">
+  <!-- About Section -->
+  <section class="mb-8">
+    <p class="text-xl font-bold uppercase mb-2">About</p>
+    <p class="text-base break-words">
+      {{ description }}
+    </p>
+  </section>
+
+  <!-- Links Section -->
+  <section class="mb-8">
+    <p class="text-xl font-bold uppercase mb-4">Links</p>
+    <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <a
+        target="_blank"
+        href="https://manenergysolutions.sharepoint.com/:u:/r/teams/ELDX/SitePages/Issue-Report-Documentation.aspx?csf=1&web=1&e=Nh84sd"
+        class="flex items-center p-4 card-bg rounded-lg w-full shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-external-link text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">User Guide</p>
+          <p class="text-sm text-wrap overflow-hidden text-ellipsis">
+            https://manenergysolutions.sharepoint.com/
+          </p>
+        </div>
+      </a>
+
+      <a
+        target="_blank"
+        href="{{ this.arasURL }}"
+        class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-external-link text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">Aras Innovator</p>
+          <p class="text-sm text-wrap overflow-hidden text-ellipsis">
+            {{ this.arasURL }}
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Details Section -->
+  <section class="mb-8">
+    <p class="text-xl font-bold uppercase mb-4">Contact Details</p>
+    <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <a
+        href="mailto:emil.jensen.a@man-es.com"
+        class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-envelope text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">Main Development</p>
+          <p class="text-sm overflow-hidden text-ellipsis">Emil Gram Jensen</p>
+        </div>
+      </a>
+
+      <a
+        href="mailto:benjamin.villadsen@man-es.com"
+        class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-envelope text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">Main Development</p>
+          <p class="text-sm overflow-hidden text-ellipsis">
+            Benjamin Villadsen
+          </p>
+        </div>
+      </a>
+
+      <a
+        href="mailto:svend.glavind@man-es.com"
+        class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-envelope text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">IT Support</p>
+          <p class="text-sm overflow-hidden text-ellipsis">Svend Glavind</p>
+        </div>
+      </a>
+
+      <a
+        href="mailto:amit.zanzane@man-es.com"
+        class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+      >
+        <i class="pi pi-envelope text-lg text-[var(--primary)]"></i>
+        <div class="ml-4">
+          <p class="font-medium">IT Support</p>
+          <p class="text-sm overflow-hidden text-ellipsis">Amit Zanzane</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer
+    class="flex justify-between items-center py-4 surface-bg border-t border-[var(--background)] rounded-b-lg"
+  >
+    <span>&copy; Man Energy Solutions</span>
+    <span>Powered by ARAS</span>
+  </footer>
+</div>

@@ -1,18 +1,29 @@
 <div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
-  <div style="flex: 1 1 auto">
-  </div>
+  <div style="flex: 1 1 auto"></div>
 
-  <button class="helpButton topbarButton" style="margin-right: 10px;">
+  <button class="helpButton topbarButton mr-2" (click)="toggleHelpCard()">
     <i class="pi pi-info-circle"></i>
-    <p class=" ">HELP & INFO</p>
+    <p>HELP & INFO</p>
   </button>
-  
-    <button class="topbarButton darkmodeButton"
-      (click)="themeService.toggleTheme()"
-      *ngIf="themeService.layoutConfig.showToggle"
-    >
-      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
-      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
-    </button>
-  </div>
-  
+
+  <button class="topbarButton darkmodeButton"
+    (click)="themeService.toggleTheme()"
+    *ngIf="themeService.layoutConfig.showToggle"
+  >
+    <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+    <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+  </button>
+</div>
+
+
+
+<p-dialog
+  [(visible)]="showHelpCard"
+  header="HELP & INFO"
+  [modal]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [draggable]="false"
+>
+    <help-card></help-card>
+</p-dialog>
