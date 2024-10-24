@@ -66,6 +66,11 @@ export class AppComponent {
         title: "Contact",
         name: "John Doe",
         email: "john@doe.como",
+      },
+      {
+        title: "Contact",
+        name: "Jane Doe",
+        email: "ostemail@dsd.com",
       }
     ]
   }

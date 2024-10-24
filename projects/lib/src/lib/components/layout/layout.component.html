@@ -9,7 +9,12 @@
   [groupRoutes]="groupRoutes"
   [sidebarHide]="sidebarHide"
 >
-  <ngx-layout-topbar *ngIf="showTopbar" [topbarHeight]="topbarHeight" [helpCard]="helpCard">
+  <ngx-layout-topbar 
+    *ngIf="showTopbar" 
+    [topbarHeight]="topbarHeight" 
+    [helpHide]="helpHide" 
+    [helpCard]="helpCard"
+  >
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
   </ngx-layout-topbar>
   <div class="layout_page">

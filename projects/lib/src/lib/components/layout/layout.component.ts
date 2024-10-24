@@ -38,8 +38,9 @@ export class LayoutComponent {
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() sidebarFooter?: SidebarFooter;
   @Input() topbarHeight: number = 60;
-  @Input() sidebarHide?: any = false;
+  @Input() sidebarHide?: boolean = false;
   @Input() helpCard?: HelpCard;
+  @Input() helpHide: boolean = false;
 
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 

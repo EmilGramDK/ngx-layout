@@ -36,11 +36,11 @@
 
   <!-- Contact Details Section -->
 
-  @for ( contact of helpCard?.contacts; track $index) {
-
-    <section class="mb-8">
-      <p class="text-xl font-bold uppercase mb-4">Contact Details</p>
-      <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+  
+  <section class="mb-8">
+    <p class="text-xl font-bold uppercase mb-4">Contact Details</p>
+    <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        @for ( contact of helpCard?.contacts; track $index) {
         <a
           href="mailto:{{ contact.email }}"
           class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
@@ -51,10 +51,10 @@
             <p class="text-sm overflow-hidden text-ellipsis">{{ contact.name }}</p>
           </div>
         </a>
+      }
       </div>
     </section>
 
-  }
 
   <!-- Footer Section -->
   <footer

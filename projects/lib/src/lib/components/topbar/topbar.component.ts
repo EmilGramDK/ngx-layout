@@ -15,12 +15,14 @@ import { HelpCard } from '../../interfaces';
 })
 export class TopbarComponent {
   @Input({ required: true }) topbarHeight!: number;
+  @Input(({required:true})) helpHide!: boolean;
   @Input() helpCard?: HelpCard;
 
   showHelpCard = false;
   toggleHelpCard() {
     this.showHelpCard = !this.showHelpCard;
   }
+
 
   constructor(
     public themeService: ThemeService,

@@ -31,8 +31,6 @@ export class SidebarComponent {
     this.routes = this.router.config;
   }
 
-
-
   toggleSidebar() {
     console.log("toggle sidebar");
     this.sidebarVisible = !this.sidebarVisible;
