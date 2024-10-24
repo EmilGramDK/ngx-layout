@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
+import { HelpCard, LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms'; 
 import { DropdownModule } from 'primeng/dropdown';
@@ -48,6 +48,27 @@ export class AppComponent {
 
   countries: any[] = [];
   date: Date | null = null;
+
+  public helpCardData: HelpCard = {
+    description: "This is a test application.",
+    links: [
+      {
+        title: "Google",
+        link: "https://www.google.com",
+      },
+      {
+        title: "Bing",
+        link: "https://www.bing.com",
+      }
+    ],
+    contacts: [
+      {
+        title: "Contact",
+        name: "John Doe",
+        email: "john@doe.como",
+      }
+    ]
+  }
 
   components = [
     {

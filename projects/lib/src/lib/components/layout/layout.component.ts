@@ -7,7 +7,7 @@ import {
   TemplateRef,
 } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, HelpCard, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -39,7 +39,7 @@ export class LayoutComponent {
   @Input() sidebarFooter?: SidebarFooter;
   @Input() topbarHeight: number = 60;
   @Input() sidebarHide?: any = false;
-  @Input() HelpCardData?: { description: string; arasURL: string; userGuideURL: string; };
+  @Input() helpCard?: HelpCard;
 
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 
