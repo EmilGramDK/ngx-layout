@@ -63,14 +63,14 @@ export class AppComponent {
     ],
     contacts: [
       {
-        title: "Contact",
+        title: "Sofware developer",
         name: "John Doe",
-        email: "john@doe.como",
+        email: "john@doe.com",
       },
       {
-        title: "Contact",
+        title: "Assistent",
         name: "Jane Doe",
-        email: "ostemail@dsd.com",
+        email: "Johndown@doe.com",
       }
     ]
   }
