@@ -8,12 +8,14 @@
   [extraRoutes]="extraRoutes"
   [groupRoutes]="groupRoutes"
   [sidebarHide]="sidebarHide"
+  [sidebarCollapsed]="sidebarCollapsed"
 >
   <ngx-layout-topbar 
     *ngIf="showTopbar" 
     [topbarHeight]="topbarHeight" 
     [helpHide]="helpHide" 
     [helpCard]="helpCard"
+    (toggleSidebar)="toggleSidebar()"
   >
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
   </ngx-layout-topbar>

@@ -1,6 +1,11 @@
 <div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
   <div style="flex: 1 1 auto"></div>
 
+  <button class="topbarButton helpButton mr-2" (click)="toggleSidebarClick()">
+    <i class="pi pi-times"></i>
+    <p>Collapse sidebar</p> 
+  </button>
+
   <button [class.hidden]="helpHide" class="helpButton topbarButton mr-2"  (click)="toggleHelpCard()">
     <i class="pi pi-info-circle"></i>
     <p>HELP & INFO</p>

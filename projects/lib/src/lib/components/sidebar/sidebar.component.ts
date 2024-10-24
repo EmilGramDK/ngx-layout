@@ -22,6 +22,7 @@ export class SidebarComponent {
   @Input() logo?: string;
   @Input() footer?: SidebarFooter;
   @Input(({required:true})) sidebarHide!: any;
+  @Input() sidebarCollapsed: boolean = false;
 
   @Output() footerOnClick = new EventEmitter<void>();
 
@@ -31,7 +32,9 @@ export class SidebarComponent {
     this.routes = this.router.config;
   }
 
-  toggleSidebar() {
+
+
+  mobileShowHideSidebar() {
     console.log("toggle sidebar");
     this.sidebarVisible = !this.sidebarVisible;
   }

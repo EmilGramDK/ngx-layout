@@ -46,9 +46,15 @@ export class LayoutComponent {
 
   @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
 
+  public sidebarCollapsed: boolean = false;
+
   constructor(private themeService: ThemeService) {}
 
   footerClick() {
     this.sidebarFooterOnClick.emit();
+  }
+
+  toggleSidebar() {
+    this.sidebarCollapsed = !this.sidebarCollapsed;
   }
 }
