@@ -49,6 +49,8 @@ export class AppComponent {
   countries: any[] = [];
   date: Date | null = null;
 
+  logo = "../../public/logo.png";
+
   public helpCardData: HelpCard = {
     description: "This is a test application.",
     links: [
