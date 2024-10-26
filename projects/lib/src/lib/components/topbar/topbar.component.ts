@@ -22,6 +22,7 @@ export class TopbarComponent {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   showHelpCard = false;
+  iconSwitch = false;
 
   public toggleHelpCard() {
     this.showHelpCard = !this.showHelpCard;
@@ -29,6 +30,7 @@ export class TopbarComponent {
 
   public toggleSidebarClick() {
     this.toggleSidebar.emit();
+    this.iconSwitch = !this.iconSwitch;
   }
 
   constructor(

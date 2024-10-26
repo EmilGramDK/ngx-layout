@@ -1,25 +1,27 @@
-<div class="layout_topbar" [ngStyle]="{ height: topbarHeight + 'px' }">
-  <div style="flex: 1 1 auto"></div>
+<div class="layout_topbar flex justify-between items-center" [ngStyle]="{ height: topbarHeight + 'px' }">
+  <!-- Left Section with Collapse Button -->
+  <div class="flex flex-row" [ngClass]="iconSwitch ? '' : ' -translate-x-[4.4rem] sidebar_nav'">
+    <button class=" py-[10px] px-[10px]" (click)="toggleSidebarClick()" [ngClass]="iconSwitch ? 'topbarButton' : ''">
+      <i [ngClass]="iconSwitch ? 'pi pi-chevron-left' : 'pi pi-chevron-right text-[1.2rem] nav_list'"></i>
+    </button>
+  </div>
 
-  <button class="topbarButton helpButton mr-2" (click)="toggleSidebarClick()">
-    <i class="pi pi-times"></i>
-    <p>Collapse sidebar</p> 
-  </button>
+  <!-- Right Section with Help and Dark Mode Buttons -->
+  <div class="flex flex-row gap-2">
+    <button [class.hidden]="helpHide" class="helpButton topbarButton" (click)="toggleHelpCard()">
+      <i class="pi pi-info-circle"></i>
+      <p>HELP & INFO</p>
+    </button>
 
-  <button [class.hidden]="helpHide" class="helpButton topbarButton mr-2"  (click)="toggleHelpCard()">
-    <i class="pi pi-info-circle"></i>
-    <p>HELP & INFO</p>
-  </button>
-
-  <button class="topbarButton darkmodeButton"
-    (click)="themeService.toggleTheme()"
-    *ngIf="themeService.layoutConfig.showToggle"
-  >
-    <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
-    <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
-  </button>
+    <button class="topbarButton darkmodeButton"
+      (click)="themeService.toggleTheme()"
+      *ngIf="themeService.layoutConfig.showToggle"
+    >
+      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+    </button>
+  </div>
 </div>
-
 
 
 <p-dialog
