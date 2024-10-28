@@ -35,7 +35,7 @@ export class AppComponent {
         {
           title: "Assistent",
           name: "Jane Doe",
-          email: "Johndown@doe.com",
+          email: "Jane@doe.com",
         }
       ]
     };

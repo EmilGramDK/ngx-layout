@@ -8,9 +8,9 @@
   <div class="layout_sidebar" [ngClass]="{'collapsed': sidebarCollapsed}" >
     <div class="logo_container flex flex-col gap-2" *ngIf="logo">
       <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
-      <p *ngIf="logo.logoText" class=" text-white text-sm font-semibold" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logo.logoText }} </p>
+      <p *ngIf="logo.logoText" class="text-white text-sm font-semibold" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logo.logoText }} </p>
     </div>
-    <nav class="sidebar_nav ">
+    <nav class="sidebar_nav m-0">
       <ul role="list" class="nav_list">
         <li>
           <ul role="list" class="nav_items">
@@ -143,7 +143,7 @@
     </nav>
   </div>
 </div>
-  <div class="content_area">
+  <div class="content_area" [ngClass]="{'ml-[60px]': sidebarCollapsed, 'collapsed': sidebarCollapsed}">
     <ng-content></ng-content>
   </div>
 </div>
