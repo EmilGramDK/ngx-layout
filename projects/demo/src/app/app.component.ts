@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { HelpCard, LayoutComponent, ThemeService } from "@emilgramdk/ngx-layout";
+import { HelpCard, LayoutComponent, ThemeService, LogoInfo } from "@emilgramdk/ngx-layout";
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms'; 
 import { DropdownModule } from 'primeng/dropdown';
@@ -50,6 +50,24 @@ export class AppComponent {
   date: Date | null = null;
 
   logo = "../../public/logo.png";
+
+  public logoInfoData: LogoInfo = {
+    logo: "",
+    logoText: "Test Application",
+  };
+
+  private checkLogoExistence(): void {
+    fetch("/logo.png")
+      .then((response) => {
+        if (response.ok) {
+          this.logoInfoData.logo = "/logo.png";
+        }
+      })
+      .catch(() => {
+        // If the logo does not exist or any error occurs, the logo remains empty.
+        this.logoInfoData.logo = "";
+      });
+  }
 
   public helpCardData: HelpCard = {
     description: "This is a test application.",
@@ -114,6 +132,7 @@ export class AppComponent {
   ];
 
   constructor() {
+    this.checkLogoExistence();
     this.cities = [
       { name: 'New York', code: 'NY' },
       { name: 'Rome', code: 'RM' },

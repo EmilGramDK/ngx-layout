@@ -7,7 +7,7 @@ import {
   TemplateRef,
 } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { GroupRoute, HelpCard, SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, HelpCard, SidebarFooter, SidebarRoute, LogoInfo } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -41,6 +41,7 @@ export class LayoutComponent {
   @Input() sidebarHide?: boolean = false;
   @Input() helpCard?: HelpCard;
   @Input() helpHide: boolean = false;
+  @Input() logoInfo?: LogoInfo;
 
   @Output() sidebarFooterOnClick = new EventEmitter<void>();
 

@@ -3,8 +3,9 @@
     <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
   </button>
   <div class="layout_sidebar" [ngClass]="{'hidden': sidebarHide, 'collapsed': sidebarCollapsed}" >
-    <div class="logo_container">
-      <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
+    <div class="logo_container flex flex-col">
+      <img *ngIf="logoInfo?.logo" alt="Logo" [src]="logoInfo?.logo" class="logo" (click)="goToPage('')" />
+      <p *ngIf="logoInfo?.logoText" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logoInfo?.logoText }} </p>
     </div>
     <nav class="sidebar_nav ">
       <ul role="list" class="nav_list">
@@ -84,8 +85,9 @@
   <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
     <nav class="sidebar_nav_mobile">
       <ul role="list" class="nav_list_mobile">
-        <div class="logo_container">
-          <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
+        <div class="logo_container flex flex-col">
+          <img *ngIf="logoInfo?.logo" alt="Logo" [src]="logoInfo?.logo" class="logo" (click)="goToPage('')" />
+          <p *ngIf="logoInfo?.logoText"> {{ logoInfo?.logoText }} </p>
         </div>
         <li style="flex: 1 1 auto">
           <ul role="list" class="nav_items_mobile">

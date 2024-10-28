@@ -6,7 +6,7 @@ import {
   RouterLink,
   RouterLinkActive,
 } from "@angular/router";
-import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, SidebarFooter, SidebarRoute, LogoInfo } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
 
 @Component({
@@ -23,6 +23,7 @@ export class SidebarComponent {
   @Input() footer?: SidebarFooter;
   @Input(({required:true})) sidebarHide!: any;
   @Input() sidebarCollapsed: boolean = false;
+  @Input() logoInfo?: LogoInfo;
 
   @Output() footerOnClick = new EventEmitter<void>();
 

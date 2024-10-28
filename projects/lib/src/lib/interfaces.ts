@@ -10,6 +10,11 @@ export interface SidebarFooter {
   subTitle?: string;
 }
 
+export interface LogoInfo {
+  logo: string;
+  logoText: string;
+}
+
 export interface GroupRoute {
   title: string;
   routes: SidebarRoute[];
