@@ -2,7 +2,7 @@
   <button class="burger-menu" (click)="mobileShowHideSidebar()">
     <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
   </button>
-  <div class="layout_sidebar" [ngClass]="{'hidden': sidebarHide, 'collapsed': !sidebarCollapsed}" >
+  <div class="layout_sidebar" [ngClass]="{'hidden': sidebarHide, 'collapsed': sidebarCollapsed}" >
     <div class="logo_container">
       <img alt="Logo" [src]="logo" class="logo" (click)="goToPage('')" />
     </div>
@@ -22,7 +22,7 @@
             >
               <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                <p [ngClass]="{hidden: !sidebarCollapsed}">{{ item.title }}</p>
+                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
               </div>
             </li>
 

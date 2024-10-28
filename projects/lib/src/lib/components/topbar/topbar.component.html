@@ -1,11 +1,12 @@
-<div class="layout_topbar flex justify-between items-center" [ngStyle]="{ height: topbarHeight + 'px' }">
-  <!-- Left Section with Collapse Button -->
-  <div class="flex flex-row" [ngClass]="iconSwitch ? '' : ' -translate-x-[4.4rem] sidebar_nav'">
-    <button class=" py-[10px] px-[10px]" (click)="toggleSidebarClick()" [ngClass]="iconSwitch ? 'topbarButton' : ''">
-      <i [ngClass]="iconSwitch ? 'pi pi-chevron-left' : 'pi pi-chevron-right text-[1.2rem] nav_list'"></i>
+<div class="layout_topbar flex  items-center" [ngClass]="!isMobile ? 'justify-between' : 'justify-end'" [ngStyle]="{ height: topbarHeight + 'px' }">
+
+  <!-- Collapseble sidebar button -->
+  <div *ngIf="!isMobile" class="flex flex-row" [ngClass]="iconSwitch ? '-translate-x-[4.2rem] sidebar_nav' : ''">
+    <button class="py-[10px] px-[10px]" (click)="toggleSidebarClick()" [ngClass]="iconSwitch ? '' : 'topbarButton'">
+      <i [ngClass]="iconSwitch ? 'pi pi-chevron-right text-[1.2rem] nav_list' : 'pi pi-chevron-left'"></i>
     </button>
   </div>
-
+  
   <!-- Right Section with Help and Dark Mode Buttons -->
   <div class="flex flex-row gap-2">
     <button [class.hidden]="helpHide" class="helpButton topbarButton" (click)="toggleHelpCard()">

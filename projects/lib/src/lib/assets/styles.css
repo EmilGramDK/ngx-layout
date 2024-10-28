@@ -204,11 +204,7 @@ td {
   justify-content: center;
   margin: 0 0 1rem 0;
   transition: margin 0.3s ease, justify-content 0.3s ease;
-  animation: fadeOut 0.3s forwards;
-}
 
-.layout_sidebar.collapsed .nav_item.active {
-  animation: fadeOut 0.3s forwards;
 }
 
 .layout_sidebar.collapsed .footer_content {
