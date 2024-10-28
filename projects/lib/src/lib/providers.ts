@@ -3,7 +3,7 @@ import {
   makeEnvironmentProviders,
   type EnvironmentProviders,
 } from "@angular/core";
-import { LAYOUT_CONFIG, LayoutConfig, mergeLayoutConfig } from "./config";
+import { _LayoutConfig } from "./config";
 import { RouterStateSnapshot, TitleStrategy } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { ThemeService } from "./theme.service";
@@ -28,19 +28,15 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
 }
 
 /**
- * Allows to provide the `Layout` configuration.
+ * Allows to provide the `TitleStrategy`.
  *
  * @example
  * export const appConfig: ApplicationConfig = {
- *   providers: [provideLayout()],
+ *   providers: [provideTitleStrategy()],
  * };
  */
-export function provideLayout(
-  config: Partial<LayoutConfig>
-): EnvironmentProviders {
-  const mergedConfig = mergeLayoutConfig(config);
+export function provideTitleStrategy(): EnvironmentProviders {
   return makeEnvironmentProviders([
-    { provide: LAYOUT_CONFIG, useValue: mergedConfig },
     { provide: TitleStrategy, useClass: TemplatePageTitleStrategy },
   ]);
 }

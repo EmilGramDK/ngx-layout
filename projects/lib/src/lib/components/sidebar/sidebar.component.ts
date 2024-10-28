@@ -6,7 +6,7 @@ import {
   RouterLink,
   RouterLinkActive,
 } from "@angular/router";
-import { GroupRoute, SidebarFooter, SidebarRoute, LogoInfo } from "../../interfaces";
+import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
 
 @Component({
@@ -19,11 +19,8 @@ export class SidebarComponent {
   routes: SidebarRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() groupRoutes: GroupRoute[] = [];
-  @Input() logo?: string;
   @Input() footer?: SidebarFooter;
-  @Input(({required:true})) sidebarHide!: any;
   @Input() sidebarCollapsed: boolean = false;
-  @Input() logoInfo?: LogoInfo;
 
   @Output() footerOnClick = new EventEmitter<void>();
 
@@ -32,7 +29,6 @@ export class SidebarComponent {
   constructor(private router: Router, public themeService: ThemeService) {
     this.routes = this.router.config;
   }
-
 
 
   mobileShowHideSidebar() {

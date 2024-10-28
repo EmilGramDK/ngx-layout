@@ -1,11 +1,14 @@
-<div class="" >
+@let logo = themeService.layoutConfig.logo;
+
+<div>
+  <div  *ngIf="themeService.layoutConfig.showSidebar">
   <button class="burger-menu" (click)="mobileShowHideSidebar()">
     <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
   </button>
-  <div class="layout_sidebar" [ngClass]="{'hidden': sidebarHide, 'collapsed': sidebarCollapsed}" >
-    <div class="logo_container flex flex-col">
-      <img *ngIf="logoInfo?.logo" alt="Logo" [src]="logoInfo?.logo" class="logo" (click)="goToPage('')" />
-      <p *ngIf="logoInfo?.logoText" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logoInfo?.logoText }} </p>
+  <div class="layout_sidebar" [ngClass]="{'collapsed': sidebarCollapsed}" >
+    <div class="logo_container flex flex-col gap-2" *ngIf="logo">
+      <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
+      <p *ngIf="logo.logoText" class=" text-white text-sm font-semibold" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logo.logoText }} </p>
     </div>
     <nav class="sidebar_nav ">
       <ul role="list" class="nav_list">
@@ -85,9 +88,9 @@
   <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
     <nav class="sidebar_nav_mobile">
       <ul role="list" class="nav_list_mobile">
-        <div class="logo_container flex flex-col">
-          <img *ngIf="logoInfo?.logo" alt="Logo" [src]="logoInfo?.logo" class="logo" (click)="goToPage('')" />
-          <p *ngIf="logoInfo?.logoText"> {{ logoInfo?.logoText }} </p>
+        <div class="logo_container flex flex-col" *ngIf="logo">
+          <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
+          <p *ngIf="logo.logoText" > {{ logo.logoText }} </p>
         </div>
         <li style="flex: 1 1 auto">
           <ul role="list" class="nav_items_mobile">
@@ -139,7 +142,7 @@
       </ul>
     </nav>
   </div>
-
+</div>
   <div class="content_area">
     <ng-content></ng-content>
   </div>

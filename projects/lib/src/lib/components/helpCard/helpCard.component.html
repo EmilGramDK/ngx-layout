@@ -1,3 +1,4 @@
+@let helpCard = themeService.layoutConfig.helpCard;
 <div class="mx-auto px-4 surface-bg rounded-lg">
   
   <!-- About Section -->
@@ -6,6 +7,8 @@
     <p class="text-base break-words">
       {{ helpCard?.description }}
     </p>
+    <p class="mt-2">Press <app-kbd key="Enter + Shift + P"></app-kbd> to proceed.</p>
+    <p class="mt-2">Press <app-kbd key="Alt + Command + C"></app-kbd> to proceed.</p>
   </section>
 
   <section class="mb-8">

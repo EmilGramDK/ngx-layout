@@ -1,21 +1,13 @@
-<ngx-layout-loading *ngIf="loading" [logo]="logo"></ngx-layout-loading>
+<ngx-layout-loading *ngIf="loading"></ngx-layout-loading>
 
 <ngx-layout-sidebar
   *ngIf="renderApp"
   [footer]="sidebarFooter"
-  (footerOnClick)="footerClick()"
-  [logo]="logo"
-  [logoInfo]="logoInfo"
   [extraRoutes]="extraRoutes"
   [groupRoutes]="groupRoutes"
-  [sidebarHide]="sidebarHide"
   [sidebarCollapsed]="sidebarCollapsed"
 >
   <ngx-layout-topbar 
-    *ngIf="showTopbar" 
-    [topbarHeight]="topbarHeight" 
-    [helpHide]="helpHide" 
-    [helpCard]="helpCard"
     (toggleSidebar)="toggleSidebar()"
   >
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>

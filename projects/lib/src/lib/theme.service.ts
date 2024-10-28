@@ -1,33 +1,49 @@
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
-import { LAYOUT_CONFIG, LayoutConfig } from "./config";
+import { _LayoutConfig, defaultConfig } from "./config";
 import { Title } from "@angular/platform-browser";
+import { BehaviorSubject } from 'rxjs';
+import { LayoutConfig } from "./interfaces";
 
 @Injectable({
   providedIn: "root",
 })
 export class ThemeService {
   private readonly themeKey = "theme";
-  public layoutConfig: LayoutConfig;
+  private _layoutConfig?: _LayoutConfig;
   public theme: "light" | "dark" = "dark";
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    @Inject(LAYOUT_CONFIG) private config: LayoutConfig,
     private titleService: Title
   ) {
-    this.layoutConfig = this.config;
     this.initializeTheme();
+  }
+
+  public get layoutConfig() {
+    if(!this._layoutConfig) {
+      throw new Error(
+        "Layout config not set. Call themeService.setConfig() first."
+      );
+    }
+    return this._layoutConfig;
+  }
+
+  public setConfig(config: LayoutConfig) {
+    this._layoutConfig = {...defaultConfig, ...config};
     this.setTitle();
   }
 
   public setTitle(title?: string) {
-    let _title = this.layoutConfig.titleSuffix;
+    let _title = this._layoutConfig?.titleSuffix;
+    
     if (title) {
       _title = `${title} | ${_title}`;
     }
 
-    this.titleService.setTitle(_title);
+    console.log('title',_title);
+    
+    this.titleService.setTitle(_title || "");
   }
 
   public toggleTheme() {

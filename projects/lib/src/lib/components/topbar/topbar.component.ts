@@ -14,10 +14,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   imports: [CommonModule, DialogModule, ButtonModule, HelpComponent, SidebarComponent],
 })
 export class TopbarComponent {
-  @Input({ required: true }) topbarHeight!: number;
-  @Input(({required:true})) helpHide!: boolean;
-  @Input() helpCard?: HelpCard;
-  
+
   @Output() toggleSidebar = new EventEmitter<void>();
 
   showHelpCard = false;

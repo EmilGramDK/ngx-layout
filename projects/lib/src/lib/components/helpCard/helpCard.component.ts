@@ -1,20 +1,16 @@
-import { Component, Input } from '@angular/core';
-import { HelpCard } from "../../interfaces";
+import { Component } from '@angular/core';
+import { ThemeService } from '../../theme.service';
+import { KbdComponent } from '../kbd/kbd.component';
 
 @Component({
   selector: 'help-card',
   templateUrl: './helpCard.component.html',
   standalone: true,
-  imports: [],
+  imports: [KbdComponent],
 })
 export class HelpComponent {
-  @Input() helpCard?: HelpCard;
 
-  constructor() {}
-  
-  closeHelpCard() {
-    // Logik til at fjerne komponenten fra DOM, hvis nødvendigt
-  }
+  constructor(public themeService: ThemeService) {}
 
   shortLink(link: string) {
     return link.replace(/(^\w+:|^)\/\//, '');

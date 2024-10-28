@@ -7,7 +7,7 @@ import {
   TemplateRef,
 } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { GroupRoute, HelpCard, SidebarFooter, SidebarRoute, LogoInfo } from "../../interfaces";
+import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -30,30 +30,16 @@ import { DialogModule } from "primeng/dialog";
   ],
 })
 export class LayoutComponent {
-  @Input() renderApp: any = true;
+  @Input() renderApp?: any = true;
   @Input() loading?: any = false;
-  @Input() showTopbar?: any = true;
-  @Input() logo?: string = "/assets/logo.png";
   @Input() groupRoutes: GroupRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() sidebarFooter?: SidebarFooter;
-  @Input() topbarHeight: number = 60;
-  @Input() sidebarHide?: boolean = false;
-  @Input() helpCard?: HelpCard;
-  @Input() helpHide: boolean = false;
-  @Input() logoInfo?: LogoInfo;
-
-  @Output() sidebarFooterOnClick = new EventEmitter<void>();
-
-  @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
+  @ContentChild("topbar") topbarTemplate!: TemplateRef<any>
 
   public sidebarCollapsed: boolean = false;
 
   constructor(private themeService: ThemeService) {}
-
-  footerClick() {
-    this.sidebarFooterOnClick.emit();
-  }
 
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
