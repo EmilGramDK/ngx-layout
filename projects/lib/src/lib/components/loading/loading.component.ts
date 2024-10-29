@@ -9,5 +9,5 @@ import { ThemeService } from "../../theme.service";
   imports: [CommonModule],
 })
 export class LoadingComponent {
-  constructor( public themeService: ThemeService ) {}
+  constructor(public themeService: ThemeService) {}
 }

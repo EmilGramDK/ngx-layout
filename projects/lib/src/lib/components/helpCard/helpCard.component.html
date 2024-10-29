@@ -1,29 +1,30 @@
 @let helpCard = themeService.layoutConfig.helpCard;
-<div class="mx-auto px-4 surface-bg rounded-lg">
-  
+<div class="surface-bg mx-auto rounded-lg px-4">
   <!-- About Section -->
-  
+
   <section class="mb-8">
-    <p class="text-base break-words">
+    <p class="break-words text-base">
       {{ helpCard?.description }}
     </p>
   </section>
 
   <section class="mb-8">
-    <p class="text-xl font-bold uppercase mb-4">ShortCuts</p>
+    <p class="mb-4 text-xl font-bold uppercase">ShortCuts</p>
 
-    <table class="text-sm card-bg rounded-lg shadow shortcuts">
+    <table class="card-bg shortcuts rounded-lg text-sm shadow">
       <thead>
         <tr>
-          <th class="text-left py-2 px-4">Action</th>
-          <th class="text-left py-2 px-4">Shortcut</th>
+          <th class="px-4 py-2 text-left">Action</th>
+          <th class="px-4 py-2 text-left">Shortcut</th>
         </tr>
       </thead>
       <tbody>
         @for (shortcut of helpCard?.shortcuts; track $index) {
           <tr class="last:border-b-0">
-            <td class="py-2 px-4">{{ shortcut.description }}</td>
-            <td class="py-2 pl-2"><app-kbd [key]="shortcut.shortcut"></app-kbd></td>
+            <td class="px-4 py-2">{{ shortcut.description }}</td>
+            <td class="py-2 pl-2">
+              <app-kbd [key]="shortcut.shortcut"></app-kbd>
+            </td>
           </tr>
         }
       </tbody>
@@ -31,54 +32,51 @@
   </section>
 
   <section class="mb-8">
-    <p class="text-xl font-bold uppercase mb-4">Links</p>
+    <p class="mb-4 text-xl font-bold uppercase">Links</p>
     <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-
       @for (link of helpCard?.links; track $index) {
-
         <a
           target="_blank"
           [href]="link.link"
-          class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+          class="card-bg flex items-center overflow-hidden rounded-lg p-4 shadow hover:opacity-80"
         >
           <i class="pi pi-external-link text-lg text-[var(--primary)]"></i>
           <div class="ml-4">
             <p class="font-medium">{{ link.title }}</p>
-            <p class="text-sm text-wrap overflow-hidden text-ellipsis">
+            <p class="overflow-hidden text-ellipsis text-wrap text-sm">
               {{ shortLink(link.link) }}
             </p>
           </div>
         </a>
-
       }
     </div>
   </section>
 
   <!-- Contact Details Section -->
 
-  
   <section class="mb-8">
-    <p class="text-xl font-bold uppercase mb-4">Contact Details</p>
+    <p class="mb-4 text-xl font-bold uppercase">Contact Details</p>
     <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-        @for ( contact of helpCard?.contacts; track $index) {
+      @for (contact of helpCard?.contacts; track $index) {
         <a
           href="mailto:{{ contact.email }}"
-          class="flex items-center p-4 card-bg rounded-lg shadow hover:opacity-80 overflow-hidden"
+          class="card-bg flex items-center overflow-hidden rounded-lg p-4 shadow hover:opacity-80"
         >
           <i class="pi pi-envelope text-lg text-[var(--primary)]"></i>
           <div class="ml-4">
             <p class="font-medium">{{ contact.name }}</p>
-            <p class="text-sm overflow-hidden text-ellipsis">{{ contact.title }}</p>
+            <p class="overflow-hidden text-ellipsis text-sm">
+              {{ contact.title }}
+            </p>
           </div>
         </a>
       }
-      </div>
-    </section>
-
+    </div>
+  </section>
 
   <!-- Footer Section -->
   <footer
-    class="flex justify-between items-center py-4 surface-bg border-t border-[var(--background)] rounded-b-lg"
+    class="surface-bg flex items-center justify-between rounded-b-lg border-t border-[var(--background)] py-4"
   >
     <span>&copy; Man Energy Solutions</span>
     <span>Powered by ARAS</span>

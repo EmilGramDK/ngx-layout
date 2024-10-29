@@ -2,7 +2,7 @@ import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { _LayoutConfig, defaultConfig } from "./config";
 import { Title } from "@angular/platform-browser";
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from "rxjs";
 import { LayoutConfig } from "./interfaces";
 
 @Injectable({
@@ -15,34 +15,34 @@ export class ThemeService {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private titleService: Title
+    private titleService: Title,
   ) {
     this.initializeTheme();
   }
 
   public get layoutConfig() {
-    if(!this._layoutConfig) {
+    if (!this._layoutConfig) {
       throw new Error(
-        "Layout config not set. Call themeService.setConfig() first."
+        "Layout config not set. Call themeService.setConfig() first.",
       );
     }
     return this._layoutConfig;
   }
 
   public setConfig(config: LayoutConfig) {
-    this._layoutConfig = {...defaultConfig, ...config};
+    this._layoutConfig = { ...defaultConfig, ...config };
     this.setTitle();
   }
 
   public setTitle(title?: string) {
     let _title = this._layoutConfig?.titleSuffix;
-    
+
     if (title) {
       _title = `${title} | ${_title}`;
     }
 
-    console.log('title',_title);
-    
+    console.log("title", _title);
+
     this.titleService.setTitle(_title || "");
   }
 

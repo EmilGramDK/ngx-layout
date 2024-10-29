@@ -31,7 +31,8 @@ npm install @emilgramdk/ngx-layout
    ```typescript
    "styles": [
      "node_modules/@emilgramdk/ngx-layout/lib/assets/styles.css",
-     "node_modules/@emilgramdk/ngx-layout/lib/assets/primeng_theme.css" // if using primeng
+     "node_modules/@emilgramdk/ngx-layout/lib/assets/primeng_theme.css",
+     "node_modules/primeicons/primeicons.css"
    ]
    ```
 
@@ -51,12 +52,6 @@ npm install @emilgramdk/ngx-layout
    <ngx-layout
       loading="boolean"                     Shows a loader
       renderApp="boolean"                   Tell the layout to wait for a state before rendering the app
-      logo="string"                         Path to logo
-      title="string"                        Title in the Topbar
-      subTitle="string"                     Subtitle in the Topbar
-      showTopbar="boolean"                  Hide the topbar
-      sidebarFooter="SidebarFooter"         Pass this to show a footer in the sidebar. {title: string; subTitle: string}
-      sidebarFooterOnClick="function"       Footer onClick function
    </ngx-layout>
    ```
 

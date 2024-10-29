@@ -52,6 +52,9 @@ body.dark {
   color: var(--foreground);
   border-radius: 0.375rem;
   padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 .btn-card {
   background: var(--card);
@@ -272,11 +275,12 @@ td {
 
 .layout_sidebar .group_title {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.70rem;
+  opacity: 0.75;
   line-height: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
-  color: #9ca3af;
+  color: var(--dark-foreground);
   text-transform: uppercase;
 }
 

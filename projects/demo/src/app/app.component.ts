@@ -1,12 +1,16 @@
 import { Component } from "@angular/core";
-import { GroupRoute, HelpCard, LayoutComponent, SidebarRoute, ThemeService } from "@emilgramdk/ngx-layout";
+import {
+  GroupRoute,
+  HelpCard,
+  LayoutComponent,
+  SidebarRoute,
+  ThemeService,
+} from "@emilgramdk/ngx-layout";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [
-    LayoutComponent
-  ],
+  imports: [LayoutComponent],
   templateUrl: "./app.component.html",
 })
 export class AppComponent {
@@ -15,32 +19,40 @@ export class AppComponent {
   public groupedRoutes: GroupRoute[] = [
     {
       title: "Group 1",
-      color: "red-400",
       routes: [
         {
-          title:"test",
+          title: "Home",
           icon: "pi pi-home",
-        }, {
-          title:"test",
+        },
+        {
+          title: "test",
           icon: "pi pi-home",
-        }, {
-          title:"test",
+        },
+      ],
+    },
+    {
+      title: "Group 2",
+      routes: [
+        {
+          title: "Home",
           icon: "pi pi-home",
-        }
-      ]
+        },
+        {
+          title: "test",
+          icon: "pi pi-home",
+        },
+      ],
     },
   ];
 
   public extraRoutes: SidebarRoute[] = [
-   
-        {
-          title:"test123",
-          icon: "pi pi-home",
-        }
+    {
+      title: "Home",
+      icon: "pi pi-home",
+    },
   ];
 
   constructor(private themeService: ThemeService) {
-
     const helpCardData: HelpCard = {
       description: "This is a test application.",
       shortcuts: [
@@ -51,7 +63,7 @@ export class AppComponent {
         {
           description: "About",
           shortcut: "alt + enter + p",
-        }
+        },
       ],
       links: [
         {
@@ -61,7 +73,7 @@ export class AppComponent {
         {
           title: "Bing",
           link: "https://www.bing.com",
-        }
+        },
       ],
       contacts: [
         {
@@ -73,22 +85,27 @@ export class AppComponent {
           title: "Assistent",
           name: "Jane Doe",
           email: "Jane@doe.com",
-        }
-      ]
+        },
+      ],
+    };
+
+    const FooterData = {
+      title: "Footer Title",
+      subTitle: "Footer Subtitle",
     };
 
     const LogoData = {
       onClickPath: "/",
-      path : "/logo.png",
-      logoText: "Demo App"
-    }
+      path: "/logo.png",
+      logoText: "Demo App",
+    };
 
     this.themeService.setConfig({
       titleSuffix: "Demo App",
       helpCard: helpCardData,
       showSidebar: true,
-      logo: LogoData 
-    })
-
+      logo: LogoData,
+      footer: FooterData,
+    });
   }
 }

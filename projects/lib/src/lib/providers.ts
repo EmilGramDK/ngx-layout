@@ -12,7 +12,7 @@ import { ThemeService } from "./theme.service";
 export class TemplatePageTitleStrategy extends TitleStrategy {
   constructor(
     private readonly title: Title,
-    private themeService: ThemeService
+    private themeService: ThemeService,
   ) {
     super();
   }
@@ -21,7 +21,7 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
     const title = this.buildTitle(routerState);
     if (title) {
       this.title.setTitle(
-        `${title} | ${this.themeService.layoutConfig.titleSuffix}`
+        `${title} | ${this.themeService.layoutConfig.titleSuffix}`,
       );
     }
   }

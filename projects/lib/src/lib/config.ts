@@ -1,5 +1,5 @@
 import { InjectionToken } from "@angular/core";
-import { HelpCard, LayoutConfig, Logo } from "./interfaces";
+import { HelpCard, LayoutConfig, Logo, Footer } from "./interfaces";
 
 // Defines the shape of the configuration object for the the Layout.
 export interface _LayoutConfig {
@@ -13,6 +13,7 @@ export interface _LayoutConfig {
   topbarHeight: number;
   logo?: Logo;
   helpCard?: HelpCard;
+  footer?: Footer;
 }
 
 // Default configuration for the Layout.

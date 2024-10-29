@@ -1,0 +1,39 @@
+<div
+  class="card-bg fixed left-0 top-0 flex h-screen w-screen items-center justify-center"
+  style="z-index: 999"
+>
+  <div class="flex flex-col items-center justify-center text-center">
+    <h1 class="m-4 text-6xl font-bold text-red-600">401</h1>
+    <p class="text-4xl font-semibold">Access Denied</p>
+    <p class="text-md m-4 text-gray-600">
+      You do not have permission to view this application.
+    </p>
+
+    <div class="mt-2 flex items-center gap-2">
+      <button
+        class="btn-surface text-sm font-bold uppercase"
+        (click)="tryAgain()"
+      >
+        <i class="pi pi-refresh text-sm"></i> Try Again
+      </button>
+
+      <button
+        (click)="showHelpCard = true"
+        class="btn-surface text-sm font-bold uppercase"
+      >
+        <i class="pi pi-info-circle text-sm"></i> Help
+      </button>
+    </div>
+  </div>
+</div>
+
+<p-dialog
+  header="Help & Info"
+  [(visible)]="showHelpCard"
+  [modal]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [draggable]="false"
+>
+  <help-card></help-card>
+</p-dialog>

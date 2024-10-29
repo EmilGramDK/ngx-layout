@@ -1,12 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import {
-  Router,
-  NavigationEnd,
-  RouterLink,
-  RouterLinkActive,
-} from "@angular/router";
-import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { GroupRoute, SidebarRoute } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
 
 @Component({
@@ -19,17 +14,18 @@ export class SidebarComponent {
   routes: SidebarRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() groupRoutes: GroupRoute[] = [];
-  @Input() footer?: SidebarFooter;
   @Input() sidebarCollapsed: boolean = false;
 
   @Output() footerOnClick = new EventEmitter<void>();
 
   public sidebarVisible: boolean = false;
 
-  constructor(private router: Router, public themeService: ThemeService) {
+  constructor(
+    private router: Router,
+    public themeService: ThemeService,
+  ) {
     this.routes = this.router.config;
   }
-
 
   mobileShowHideSidebar() {
     console.log("toggle sidebar");

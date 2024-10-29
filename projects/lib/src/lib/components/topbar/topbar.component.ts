@@ -1,20 +1,31 @@
-import { Component, EventEmitter, Input, Output, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ThemeService } from '../../theme.service';
-import { HelpComponent } from '../helpCard/helpCard.component';
-import { DialogModule } from 'primeng/dialog';
-import { ButtonModule } from 'primeng/button';
-import { HelpCard } from '../../interfaces';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  HostListener,
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ThemeService } from "../../theme.service";
+import { HelpComponent } from "../helpCard/helpCard.component";
+import { DialogModule } from "primeng/dialog";
+import { ButtonModule } from "primeng/button";
+import { HelpCard } from "../../interfaces";
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
-  selector: 'ngx-layout-topbar',
-  templateUrl: './topbar.component.html',
+  selector: "ngx-layout-topbar",
+  templateUrl: "./topbar.component.html",
   standalone: true,
-  imports: [CommonModule, DialogModule, ButtonModule, HelpComponent, SidebarComponent],
+  imports: [
+    CommonModule,
+    DialogModule,
+    ButtonModule,
+    HelpComponent,
+    SidebarComponent,
+  ],
 })
 export class TopbarComponent {
-
   @Output() toggleSidebar = new EventEmitter<void>();
 
   showHelpCard = false;
@@ -25,7 +36,7 @@ export class TopbarComponent {
     this.checkScreenSize(); // Initial check
   }
 
-  @HostListener('window:resize', [])
+  @HostListener("window:resize", [])
   onResize() {
     this.checkScreenSize();
   }

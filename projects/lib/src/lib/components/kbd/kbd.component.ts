@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'app-kbd',
+  selector: "app-kbd",
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule],
   template: `
     <ng-container *ngFor="let part of keyParts">
       <span class="kbd">{{ part }}</span>
@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
   `,
 })
 export class KbdComponent {
-  @Input() key: string = '';
-  
+  @Input() key: string = "";
+
   get keyParts() {
-    return this.key.split('+').map(part => part.trim());
+    return this.key.split("+").map((part) => part.trim());
   }
 
   isLastPart(part: string): boolean {

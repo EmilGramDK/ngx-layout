@@ -21,9 +21,14 @@ export interface Logo {
   logoText: string;
 }
 
+export interface Footer {
+  title: string;
+  subTitle: string;
+}
+
 export interface GroupRoute {
   title: string;
-  color: string;
+  color?: string;
   routes: SidebarRoute[];
 }
 

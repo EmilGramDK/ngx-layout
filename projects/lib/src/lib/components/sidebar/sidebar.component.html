@@ -1,155 +1,199 @@
 @let logo = themeService.layoutConfig.logo;
+@let footer = themeService.layoutConfig.footer;
 
 <div>
-  <div  *ngIf="themeService.layoutConfig.showSidebar">
-  <button class="burger-menu" (click)="mobileShowHideSidebar()">
-    <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
-  </button>
-  <div class="layout_sidebar" [ngClass]="{'collapsed': sidebarCollapsed}" >
-    <div class="logo_container flex flex-col gap-2" *ngIf="logo" onclick="logo.onClickPath">
-      <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
-      <p *ngIf="logo.logoText" class="text-white text-sm font-semibold" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logo.logoText }} </p>
+  <div *ngIf="themeService.layoutConfig.showSidebar">
+    <button class="burger-menu" (click)="mobileShowHideSidebar()">
+      <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
+    </button>
+    <div class="layout_sidebar" [ngClass]="{ collapsed: sidebarCollapsed }">
+      <div
+        class="logo_container flex flex-col gap-2"
+        *ngIf="logo"
+        onclick="logo.onClickPath"
+      >
+        <img
+          *ngIf="logo.path"
+          alt="Logo"
+          [src]="logo.path"
+          class="logo"
+          (click)="goToPage('')"
+        />
+        <p
+          *ngIf="logo.logoText"
+          class="text-sm font-semibold text-white"
+          [ngClass]="{ hidden: sidebarCollapsed, collapsed: sidebarCollapsed }"
+        >
+          {{ logo.logoText }}
+        </p>
+      </div>
+      <nav class="sidebar_nav">
+        <ul role="list" class="nav_list">
+          <li>
+            <ul role="list" class="nav_items">
+              <li
+                *ngFor="let item of routes"
+                class="nav_item"
+                [ngClass]="{
+                  hidden: item.hideFromMenu,
+                }"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <div class="nav_link">
+                  <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                  <p [ngClass]="{ hidden: sidebarCollapsed }">
+                    {{ item.title }}
+                  </p>
+                </div>
+              </li>
+
+              <li
+                *ngFor="let item of extraRoutes"
+                class="nav_item"
+                [ngClass]="{
+                  hidden: item.hideFromMenu,
+                }"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <div class="nav_link">
+                  <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                  <p [ngClass]="{ hidden: sidebarCollapsed }">
+                    {{ item.title }}
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <li *ngFor="let group of groupRoutes" class="grouped-routes">
+            <hr
+              class="-translate-y-2"
+              [ngClass]="{ hidden: !sidebarCollapsed }"
+            />
+
+            <div
+              class="group_title flex h-auto items-center justify-center space-x-2 text-center"
+              [ngClass]="{ 'w-full': sidebarCollapsed }"
+            >
+              <p
+                class="inline-flex leading-none"
+                [ngClass]="{ hidden: sidebarCollapsed }"
+              >
+                {{ group.title }}
+              </p>
+            </div>
+
+            <ul role="list" class="nav_items">
+              <li
+                *ngFor="let item of group.routes"
+                class="nav_item"
+                [ngClass]="{
+                  hidden: item.hideFromMenu,
+                }"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <div class="nav_link">
+                  <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                  <p [ngClass]="{ hidden: sidebarCollapsed }">
+                    {{ item.title }}
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+          <li style="flex: 1 1 auto"></li>
+
+          <li class="footer" *ngIf="footer">
+            <div class="footer_content" (click)="footerClick()">
+              <div class="footer_text">
+                <span class="footer_title">{{ footer.title }}</span>
+                <span class="footer_subtitle">{{ footer.subTitle }}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="sidebar_nav ">
-      <ul role="list" class="nav_list">
-        <li>
-          <ul role="list" class="nav_items">
-            <li
-              *ngFor="let item of routes"
-              class="nav_item"
-              [ngClass]="{
-                hidden: item.hideFromMenu
-              }"
-              [routerLink]="item.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-              <div class="nav_link">
-                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
-              </div>
-            </li>
 
-            <li
-              *ngFor="let item of extraRoutes"
-              class="nav_item"
-              [ngClass]="{
-                hidden: item.hideFromMenu
-              }"
-              [routerLink]="item.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-              <div class="nav_link">
-                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
-              </div>
-            </li>
-          </ul>
-        </li>
-
-        <li *ngFor="let group of groupRoutes" class="grouped-routes">
-
-          <div class="group_title flex items-center justify-center space-x-2 h-auto mb-1">
-            <i class="pi pi-circle-fill text-[0.60rem] inline-block text-red-400" [ngClass]="{'hidden': sidebarCollapsed}"></i>
-            <div class="h-1 w-[20px] rounded-full" [ngClass]="{'hidden': !sidebarCollapsed}"></div>
-            <p class="inline-flex leading-none" [ngClass]="{'hidden': sidebarCollapsed}"> {{ group.title }}</p>
+    <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
+      <nav class="sidebar_nav_mobile">
+        <ul role="list" class="nav_list_mobile">
+          <div class="logo_container flex flex-col" *ngIf="logo">
+            <img
+              *ngIf="logo.path"
+              alt="Logo"
+              [src]="logo.path"
+              class="logo"
+              (click)="goToPage('')"
+            />
+            <p *ngIf="logo.logoText">{{ logo.logoText }}</p>
           </div>
-          
+          <li style="flex: 1 1 auto">
+            <ul role="list" class="nav_items_mobile">
+              <li
+                *ngFor="let item of routes"
+                class="nav_item_mobile"
+                [ngClass]="{
+                  hidden: item.hideFromMenu,
+                }"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="hideSidebar()"
+              >
+                <div class="nav_link_mobile">
+                  <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                  {{ item.title }}
+                </div>
+              </li>
 
-          
-          <ul role="list" class="nav_items">
-            <li
-              *ngFor="let item of group.routes"
-              class="nav_item"
-              [ngClass]="{
-                hidden: item.hideFromMenu
-              }"
-              [routerLink]="item.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-              <div class="nav_link">
-                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
+              <li
+                *ngFor="let item of extraRoutes"
+                class="nav_item_mobile"
+                [ngClass]="{
+                  hidden: item.hideFromMenu,
+                }"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="hideSidebar()"
+              >
+                <div class="nav_link_mobile">
+                  <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
+                  {{ item.title }}
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="footer-container">
+          <li class="footer" *ngIf="footer">
+            <div class="footer_content" (click)="footerClick()">
+              <div class="footer_text">
+                <span class="footer_title">{{ footer.title }}</span>
+                <span class="footer_subtitle">{{ footer.subTitle }}</span>
               </div>
-            </li>
-          </ul>
-        </li>
-
-        <li style="flex: 1 1 auto"></li>
-
-        <li class="footer" *ngIf="footer">
-          <div class="footer_content" (click)="footerClick()">
-            <div class="footer_text">
-              <span class="footer_title">{{ footer.title }}</span>
-              <span class="footer_subtitle">{{ footer.subTitle }}</span>
             </div>
-          </div>
-        </li>
-      </ul>
-    </nav>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
-
-  <div class="layout_sidebar_mobile" [ngClass]="{ show: sidebarVisible }">
-    <nav class="sidebar_nav_mobile">
-      <ul role="list" class="nav_list_mobile">
-        <div class="logo_container flex flex-col" *ngIf="logo">
-          <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
-          <p *ngIf="logo.logoText" > {{ logo.logoText }} </p>
-        </div>
-        <li style="flex: 1 1 auto">
-          <ul role="list" class="nav_items_mobile">
-            <li
-              *ngFor="let item of routes"
-              class="nav_item_mobile"
-              [ngClass]="{
-                hidden: item.hideFromMenu
-              }"
-              [routerLink]="item.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              (click)="hideSidebar()"
-            >
-              <div class="nav_link_mobile">
-                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                {{ item.title }}
-              </div>
-            </li>
-
-            <li
-              *ngFor="let item of extraRoutes"
-              class="nav_item_mobile"
-              [ngClass]="{
-                hidden: item.hideFromMenu
-              }"
-              [routerLink]="item.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              (click)="hideSidebar()"
-            >
-              <div class="nav_link_mobile">
-                <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                {{ item.title }}
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="footer-container">
-        <li class="footer" *ngIf="footer">
-          <div class="footer_content" (click)="footerClick()">
-            <div class="footer_text">
-              <span class="footer_title">{{ footer.title }}</span>
-              <span class="footer_subtitle">{{ footer.subTitle }}</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
-  <div class="content_area" [ngClass]="{'ml-[60px]': sidebarCollapsed, 'collapsed': sidebarCollapsed, 'ml-0': !themeService.layoutConfig.showSidebar}">
+  <div
+    class="content_area"
+    [ngClass]="{
+      'ml-[60px]': sidebarCollapsed,
+      collapsed: sidebarCollapsed,
+      'ml-0': !themeService.layoutConfig.showSidebar,
+    }"
+  >
     <ng-content></ng-content>
   </div>
 </div>

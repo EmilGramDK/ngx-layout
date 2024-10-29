@@ -1,13 +1,6 @@
-import {
-  Component,
-  ContentChild,
-  EventEmitter,
-  Input,
-  Output,
-  TemplateRef,
-} from "@angular/core";
+import { Component, ContentChild, Input, TemplateRef } from "@angular/core";
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { GroupRoute, SidebarFooter, SidebarRoute } from "../../interfaces";
+import { GroupRoute, SidebarRoute } from "../../interfaces";
 import { TopbarComponent } from "../topbar/topbar.component";
 import { CommonModule } from "@angular/common";
 import { LoadingComponent } from "../loading/loading.component";
@@ -34,8 +27,7 @@ export class LayoutComponent {
   @Input() loading?: any = false;
   @Input() groupRoutes: GroupRoute[] = [];
   @Input() extraRoutes: SidebarRoute[] = [];
-  @Input() sidebarFooter?: SidebarFooter;
-  @ContentChild("topbar") topbarTemplate!: TemplateRef<any>
+  @ContentChild("topbar") topbarTemplate!: TemplateRef<any>;
 
   public sidebarCollapsed: boolean = false;
 
