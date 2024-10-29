@@ -42,9 +42,8 @@ export class AppComponent {
 
     const LogoData = {
       path : "/logo.png",
-      logoText: "Test App"
+      logoText: "Demo App"
     }
-
 
     this.themeService.setConfig({
       titleSuffix: "Demo App",
@@ -54,6 +53,4 @@ export class AppComponent {
     })
 
   }
-
- 
 }
