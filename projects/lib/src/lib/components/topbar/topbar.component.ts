@@ -31,7 +31,7 @@ export class TopbarComponent {
   }
 
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+    this.isMobile = window.innerWidth <= 1000; // Adjust the breakpoint as needed
   }
 
   public toggleHelpCard() {

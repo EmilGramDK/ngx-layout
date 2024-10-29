@@ -6,11 +6,11 @@
     <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
   </button>
   <div class="layout_sidebar" [ngClass]="{'collapsed': sidebarCollapsed}" >
-    <div class="logo_container flex flex-col gap-2" *ngIf="logo">
+    <div class="logo_container flex flex-col gap-2" *ngIf="logo" onclick="logo.onClickPath">
       <img *ngIf="logo.path" alt="Logo" [src]="logo.path" class="logo" (click)="goToPage('')" />
       <p *ngIf="logo.logoText" class="text-white text-sm font-semibold" [ngClass]="{'hidden': sidebarCollapsed, 'collapsed': sidebarCollapsed}"> {{ logo.logoText }} </p>
     </div>
-    <nav class="sidebar_nav m-0">
+    <nav class="sidebar_nav ">
       <ul role="list" class="nav_list">
         <li>
           <ul role="list" class="nav_items">
@@ -42,16 +42,22 @@
             >
               <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                {{ item.title }}
+                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
               </div>
             </li>
           </ul>
         </li>
 
-        <li *ngFor="let group of groupRoutes">
-          <div class="group_title">
-            {{ group.title }}
+        <li *ngFor="let group of groupRoutes" class="grouped-routes">
+
+          <div class="group_title flex items-center justify-center space-x-2 h-auto mb-1">
+            <i class="pi pi-circle-fill text-[0.60rem] inline-block text-red-400" [ngClass]="{'hidden': sidebarCollapsed}"></i>
+            <div class="h-1 w-[20px] rounded-full" [ngClass]="{'hidden': !sidebarCollapsed}"></div>
+            <p class="inline-flex leading-none" [ngClass]="{'hidden': sidebarCollapsed}"> {{ group.title }}</p>
           </div>
+          
+
+          
           <ul role="list" class="nav_items">
             <li
               *ngFor="let item of group.routes"
@@ -65,7 +71,7 @@
             >
               <div class="nav_link">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="icon"></i>
-                {{ item.title }}
+                <p [ngClass]="{hidden: sidebarCollapsed}">{{ item.title }}</p>
               </div>
             </li>
           </ul>
@@ -143,7 +149,7 @@
     </nav>
   </div>
 </div>
-  <div class="content_area" [ngClass]="{'ml-[60px]': sidebarCollapsed, 'collapsed': sidebarCollapsed}">
+  <div class="content_area" [ngClass]="{'ml-[60px]': sidebarCollapsed, 'collapsed': sidebarCollapsed, 'ml-0': !themeService.layoutConfig.showSidebar}">
     <ng-content></ng-content>
   </div>
 </div>

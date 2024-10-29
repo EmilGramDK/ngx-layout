@@ -16,17 +16,20 @@ export interface SidebarFooter {
 }
 
 export interface Logo {
+  onClickPath?: string;
   path: string;
   logoText: string;
 }
 
 export interface GroupRoute {
   title: string;
+  color: string;
   routes: SidebarRoute[];
 }
 
 export interface HelpCard {
   description: string;
+  shortcuts?: HelpCardShortcut[];
   links?: HelpCardLink[];
   contacts?: HelpCardContact[];
 }
@@ -34,6 +37,11 @@ export interface HelpCard {
 export interface HelpCardLink {
   title: string;
   link: string;
+}
+
+export interface HelpCardShortcut {
+  description: string;
+  shortcut: string;
 }
 
 export interface HelpCardContact {

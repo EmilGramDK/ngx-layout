@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-kbd',
   standalone: true,
-  imports: [NgFor, NgIf], // Import NgFor here to use *ngFor in this component
+  imports: [CommonModule], 
   template: `
     <ng-container *ngFor="let part of keyParts">
       <span class="kbd">{{ part }}</span>
