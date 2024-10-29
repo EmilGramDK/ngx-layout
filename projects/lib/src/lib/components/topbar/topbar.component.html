@@ -1,13 +1,63 @@
-<div class="layout_topbar">
-  <div style="flex: 1 1 auto">
-    <ng-content></ng-content>
+<div
+  class="layout_topbar flex items-center"
+  [ngClass]="
+    !isMobile && themeService.layoutConfig.showSidebar
+      ? 'justify-between'
+      : 'justify-end'
+  "
+  [ngStyle]="{ height: themeService.layoutConfig.topbarHeight + 'px' }"
+>
+  <!-- Collapseble sidebar button -->
+  <div *ngIf="themeService.layoutConfig.showSidebar">
+    <div
+      *ngIf="!isMobile"
+      class="flex flex-row"
+      [ngClass]="iconSwitch ? 'sidebar_nav -translate-x-[4.1rem]' : ''"
+    >
+      <button
+        class="px-[10px] py-[10px]"
+        (click)="toggleSidebarClick()"
+        [ngClass]="iconSwitch ? '' : 'topbarButton'"
+      >
+        <i
+          [ngClass]="
+            iconSwitch
+              ? 'pi pi-chevron-right nav_list text-[1.2rem]'
+              : 'pi pi-chevron-left'
+          "
+        ></i>
+      </button>
+    </div>
   </div>
 
-  <button
-    (click)="themeService.toggleTheme()"
-    *ngIf="themeService.layoutConfig.showToggle"
-  >
-    <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
-    <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
-  </button>
+  <!-- Right Section with Help and Dark Mode Buttons -->
+  <div class="flex flex-row gap-2">
+    <button
+      class="helpButton topbarButton"
+      (click)="toggleHelpCard()"
+      *ngIf="themeService.layoutConfig.helpCard"
+    >
+      <i class="pi pi-info-circle"></i>
+    </button>
+
+    <button
+      class="topbarButton darkmodeButton"
+      (click)="themeService.toggleTheme()"
+      *ngIf="themeService.layoutConfig.showDarkModeToggle"
+    >
+      <i class="pi pi-sun" *ngIf="themeService.theme === 'dark'"></i>
+      <i class="pi pi-moon" *ngIf="themeService.theme === 'light'"></i>
+    </button>
+  </div>
 </div>
+
+<p-dialog
+  header="Help & Info"
+  [(visible)]="showHelpCard"
+  [modal]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [draggable]="false"
+>
+  <help-card></help-card>
+</p-dialog>

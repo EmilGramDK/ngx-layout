@@ -4,6 +4,7 @@
 @import "../../../node_modules/quill/dist/quill.core.css";
 @import "../../../node_modules/quill/dist/quill.snow.css";
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

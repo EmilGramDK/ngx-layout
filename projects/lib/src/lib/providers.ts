@@ -3,7 +3,7 @@ import {
   makeEnvironmentProviders,
   type EnvironmentProviders,
 } from "@angular/core";
-import { LAYOUT_CONFIG, LayoutConfig, mergeLayoutConfig } from "./config";
+import { _LayoutConfig } from "./config";
 import { RouterStateSnapshot, TitleStrategy } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { ThemeService } from "./theme.service";
@@ -12,7 +12,7 @@ import { ThemeService } from "./theme.service";
 export class TemplatePageTitleStrategy extends TitleStrategy {
   constructor(
     private readonly title: Title,
-    private themeService: ThemeService
+    private themeService: ThemeService,
   ) {
     super();
   }
@@ -21,26 +21,22 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
     const title = this.buildTitle(routerState);
     if (title) {
       this.title.setTitle(
-        `${title} | ${this.themeService.layoutConfig.titleSuffix}`
+        `${title} | ${this.themeService.layoutConfig.titleSuffix}`,
       );
     }
   }
 }
 
 /**
- * Allows to provide the `Layout` configuration.
+ * Allows to provide the `TitleStrategy`.
  *
  * @example
  * export const appConfig: ApplicationConfig = {
- *   providers: [provideLayout()],
+ *   providers: [provideTitleStrategy()],
  * };
  */
-export function provideLayout(
-  config: Partial<LayoutConfig>
-): EnvironmentProviders {
-  const mergedConfig = mergeLayoutConfig(config);
+export function provideTitleStrategy(): EnvironmentProviders {
   return makeEnvironmentProviders([
-    { provide: LAYOUT_CONFIG, useValue: mergedConfig },
     { provide: TitleStrategy, useClass: TemplatePageTitleStrategy },
   ]);
 }

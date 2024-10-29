@@ -1,7 +1,7 @@
 <div class="fullscreen loading">
   <img
-    *ngIf="logo"
-    [src]="logo"
+    *ngIf="themeService.layoutConfig.logo"
+    [src]="themeService.layoutConfig.logo.path"
     alt="Logo"
     style="height: 180px; margin-top: -150px"
   />

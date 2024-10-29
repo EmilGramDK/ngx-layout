@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@emilgramdk/ngx-layout": "^1.0.49",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.9",
     "quill": "^2.0.2",
@@ -40,8 +41,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.0.0",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.9",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.14",
     "typescript": "~5.5.2"
   }
 }

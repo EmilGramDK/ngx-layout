@@ -1,15 +1,14 @@
-import { ApplicationConfig, provideZoneChangeDetection } from "@angular/core";
+import { ApplicationConfig } from "@angular/core";
 import { provideRouter } from "@angular/router";
 
 import { routes } from "./app.routes";
-import { provideLayout } from "../../../lib/src/lib/providers";
 import { provideAnimations } from "@angular/platform-browser/animations";
+import { provideTitleStrategy } from "@emilgramdk/ngx-layout";
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideTitleStrategy(),
     provideRouter(routes),
-    provideLayout({ titleSuffix: "My App" }),
     provideAnimations(),
   ],
 };

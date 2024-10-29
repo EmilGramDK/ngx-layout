@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input } from "@angular/core";
+import { ThemeService } from "../../theme.service";
 
 @Component({
   selector: "ngx-layout-loading",
@@ -8,7 +9,5 @@ import { Component, Input } from "@angular/core";
   imports: [CommonModule],
 })
 export class LoadingComponent {
-  @Input() logo?: string;
-
-  constructor() {}
+  constructor(public themeService: ThemeService) {}
 }

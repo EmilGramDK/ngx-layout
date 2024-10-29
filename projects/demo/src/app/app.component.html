@@ -1,11 +1,2 @@
-<ngx-layout
-  logo="logo.png"
-  [sidebarFooter]="{
-    title: 'Footer Title',
-    subTitle: 'Footer Subtitle'
-  }"
->
-  <ng-template #topbar>
-    <input type="text" placeholder="Hej.." class="surface-bg" />
-  </ng-template>
+<ngx-layout [groupRoutes]="groupedRoutes" [extraRoutes]="extraRoutes">
 </ngx-layout>
