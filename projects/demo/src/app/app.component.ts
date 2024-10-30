@@ -96,7 +96,7 @@ export class AppComponent {
 
     const LogoData = {
       onClickPath: "/",
-      path: "/logo.png",
+      path: "/man-logo.png",
       logoText: "Demo App",
     };
 

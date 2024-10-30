@@ -36,7 +36,16 @@ npm install @emilgramdk/ngx-layout
    ]
    ```
 
-2. **Add to App Component**: Add the layout to your root component.
+2. **Import in tailwind.config.js**: Import the required css as the first style under "styles" in your angular.json
+
+   ```typescript
+   content: [
+    "./src/**/*.{html,ts}",
+    "./node_modules/@emilgramdk/ngx-layout/**/*.{html,ts,mjs}", // Include your library components
+   ],
+   ```
+
+3. **Add to App Component**: Add the layout to your root component.
 
    ```html
    <ngx-layout
@@ -46,7 +55,7 @@ npm install @emilgramdk/ngx-layout
    </ngx-layout>
    ```
 
-3. **Available Props**: You can pass these props to the layout.
+4. **Available Props**: You can pass these props to the layout.
 
    ```html
    <ngx-layout
@@ -55,7 +64,7 @@ npm install @emilgramdk/ngx-layout
    </ngx-layout>
    ```
 
-4. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
+5. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
    ```html
    <ngx-layout>
      <ng-template #topbar> Topbar Button </ng-template>

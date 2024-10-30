@@ -14,15 +14,24 @@
       >
         <img
           *ngIf="logo.path"
-          alt="Logo"
+          alt="Logo transform transition-opacity duration-500 ease-in-out"
           [src]="logo.path"
-          class="logo"
+          [ngClass]="{
+            'opacity-0': sidebarCollapsed,
+            collapsed: sidebarCollapsed,
+            'delay-200': !sidebarCollapsed,
+          }"
+          class="logo max-h-12"
           (click)="goToPage('')"
         />
         <p
           *ngIf="logo.logoText"
-          class="text-sm font-semibold text-white"
-          [ngClass]="{ hidden: sidebarCollapsed, collapsed: sidebarCollapsed }"
+          [style.color]="'var(--secondary)'"
+          class="transform text-sm font-medium uppercase opacity-0 transition-all duration-200 ease-out"
+          [ngClass]="{
+            '-translate-y-1 opacity-100 delay-300': !sidebarCollapsed,
+            'opacity-0': sidebarCollapsed,
+          }"
         >
           {{ logo.logoText }}
         </p>

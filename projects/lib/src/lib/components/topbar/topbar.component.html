@@ -12,12 +12,12 @@
     <div
       *ngIf="!isMobile"
       class="flex flex-row"
-      [ngClass]="iconSwitch ? 'sidebar_nav -translate-x-[4.1rem]' : ''"
+      [ngClass]="iconSwitch ? 'sidebar_nav -translate-x-[4.12rem]' : ''"
     >
       <button
         class="px-[10px] py-[10px]"
         (click)="toggleSidebarClick()"
-        [ngClass]="iconSwitch ? '' : 'topbarButton'"
+        [ngClass]="iconSwitch ? '' : ''"
       >
         <i
           [ngClass]="
@@ -30,8 +30,9 @@
     </div>
   </div>
 
+  <ng-content></ng-content>
   <!-- Right Section with Help and Dark Mode Buttons -->
-  <div class="flex flex-row gap-2">
+  <div class="ml-2 flex flex-row gap-2">
     <button
       class="helpButton topbarButton"
       (click)="toggleHelpCard()"

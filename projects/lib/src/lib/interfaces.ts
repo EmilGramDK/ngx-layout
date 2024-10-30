@@ -17,8 +17,8 @@ export interface SidebarFooter {
 
 export interface Logo {
   onClickPath?: string;
-  path: string;
-  logoText: string;
+  path?: string;
+  logoText?: string;
 }
 
 export interface Footer {
