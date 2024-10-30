@@ -14,11 +14,12 @@
       >
         <img
           *ngIf="logo.path"
-          alt="Logo transform transition-opacity duration-400 ease-in-out"
+          alt="Logo transform transition-opacity duration-500 ease-in-out"
           [src]="logo.path"
           [ngClass]="{
             'opacity-0': sidebarCollapsed,
             collapsed: sidebarCollapsed,
+            'delay-200': !sidebarCollapsed,
           }"
           class="logo max-h-12"
           (click)="goToPage('')"
@@ -26,9 +27,9 @@
         <p
           *ngIf="logo.logoText"
           [style.color]="'var(--secondary)'"
-          class="duration-400 transform text-sm font-medium uppercase opacity-0 transition-all ease-in-out"
+          class="transform text-sm font-medium uppercase opacity-0 transition-all duration-200 ease-out"
           [ngClass]="{
-            '-translate-y-1 opacity-100': !sidebarCollapsed,
+            '-translate-y-1 opacity-100 delay-300': !sidebarCollapsed,
             'opacity-0': sidebarCollapsed,
           }"
         >
