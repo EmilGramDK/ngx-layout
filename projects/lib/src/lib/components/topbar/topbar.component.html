@@ -21,7 +21,7 @@
   <!-- Right Section with Help and Dark Mode Buttons -->
   <div class="ml-2 flex flex-row gap-2">
     <button
-      class="helpButton topbarButton"
+      class="btn btn-topbar"
       (click)="toggleHelpCard()"
       *ngIf="themeService.layoutConfig.helpCard"
     >
@@ -29,7 +29,7 @@
     </button>
 
     <button
-      class="topbarButton darkmodeButton"
+      class="btn btn-topbar"
       (click)="themeService.toggleTheme()"
       *ngIf="themeService.layoutConfig.showDarkModeToggle"
     >
