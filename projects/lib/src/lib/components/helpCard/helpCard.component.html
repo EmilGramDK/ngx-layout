@@ -8,7 +8,7 @@
     </p>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8" *ngIf="helpCard?.shortcuts">
     <p class="mb-4 text-xl font-bold uppercase">ShortCuts</p>
 
     <table class="card-bg shortcuts rounded-lg text-sm shadow">
@@ -31,7 +31,7 @@
     </table>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8" *ngIf="helpCard?.links">
     <p class="mb-4 text-xl font-bold uppercase">Links</p>
     <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       @for (link of helpCard?.links; track $index) {
@@ -54,7 +54,7 @@
 
   <!-- Contact Details Section -->
 
-  <section class="mb-8">
+  <section class="mb-8" *ngIf="helpCard?.contacts">
     <p class="mb-4 text-xl font-bold uppercase">Contact Details</p>
     <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
       @for (contact of helpCard?.contacts; track $index) {

@@ -16,12 +16,13 @@
           *ngIf="logo.path"
           alt="Logo"
           [src]="logo.path"
-          class="logo"
+          class="logo max-h-12"
           (click)="goToPage('')"
         />
         <p
           *ngIf="logo.logoText"
-          class="text-sm font-semibold text-white"
+          [style.color]="'var(--secondary)'"
+          class="-translate-y-1 text-sm font-medium uppercase"
           [ngClass]="{ hidden: sidebarCollapsed, collapsed: sidebarCollapsed }"
         >
           {{ logo.logoText }}
