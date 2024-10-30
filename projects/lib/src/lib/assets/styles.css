@@ -597,6 +597,7 @@ table tbody tr:first-child td {
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+  padding: 10px 10px; /* Add padding for a nice clickable area */
 }
 
 .darkmodeButton {

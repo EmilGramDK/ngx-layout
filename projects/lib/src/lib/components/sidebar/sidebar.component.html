@@ -3,9 +3,14 @@
 
 <div>
   <div *ngIf="themeService.layoutConfig.showSidebar">
-    <button class="burger-menu" (click)="mobileShowHideSidebar()">
-      <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
-    </button>
+    <div
+      class="burger-menu"
+      [ngStyle]="{ height: themeService.layoutConfig.topbarHeight + 'px' }"
+    >
+      <button class="topbarButton" (click)="mobileShowHideSidebar()">
+        <i [className]="themeService.layoutConfig.burgerMenuIcon"></i>
+      </button>
+    </div>
     <div class="layout_sidebar" [ngClass]="{ collapsed: sidebarCollapsed }">
       <div
         class="logo_container flex flex-col gap-2"
