@@ -15,4 +15,14 @@ export class HelpComponent {
   shortLink(link: string) {
     return link.replace(/(^\w+:|^)\/\//, "");
   }
+
+  extractDomain(link: string) {
+    try {
+      const { hostname } = new URL(link);
+      return hostname; // Correctly return the hostname here
+    } catch (error) {
+      console.error("Invalid URL:", error);
+      return null; // Return null if an error occurs
+    }
+  }
 }

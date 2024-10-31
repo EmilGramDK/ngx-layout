@@ -72,7 +72,7 @@ export class AppComponent {
         },
         {
           title: "Bing",
-          link: "https://www.bing.com",
+          link: "https://cdn.vox-cdn.com/thumbor/cY6f6QhlanusE6S4KDrfx7oAbk4=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/24016885/STK093_Google_04.jpg",
         },
       ],
       contacts: [
