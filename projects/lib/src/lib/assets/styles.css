@@ -193,10 +193,6 @@ td {
   margin: 0 0 1rem 0;
 }
 
-.layout_sidebar.collapsed .footer_content {
-  display: none;
-}
-
 .layout_sidebar.collapsed .icon {
   font-size: 1.1rem;
   font-weight: 100;

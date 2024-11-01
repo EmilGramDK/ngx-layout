@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { GroupRoute, SidebarRoute } from "../../interfaces";
 import { ThemeService } from "../../theme.service";
@@ -15,8 +15,6 @@ export class SidebarComponent {
   @Input() extraRoutes: SidebarRoute[] = [];
   @Input() groupRoutes: GroupRoute[] = [];
   @Input() sidebarCollapsed: boolean = false;
-
-  @Output() footerOnClick = new EventEmitter<void>();
 
   public sidebarVisible: boolean = false;
 
@@ -39,9 +37,5 @@ export class SidebarComponent {
   goToPage(route: string) {
     this.router.navigate([route]);
     this.sidebarVisible = false;
-  }
-
-  footerClick() {
-    this.footerOnClick.emit();
   }
 }
