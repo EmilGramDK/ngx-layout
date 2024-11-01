@@ -24,6 +24,7 @@ export interface Logo {
 export interface Footer {
   title: string;
   subTitle: string;
+  onClick?: () => void;
 }
 
 export interface GroupRoute {

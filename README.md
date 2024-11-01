@@ -71,6 +71,51 @@ npm install @emilgramdk/ngx-layout
    </ngx-layout>
    ```
 
+## Components
+
+- **Help card component**
+
+  This is a componet that shows a little icon in the topbar with an "i" for info, if you add this in **app.component.ts**
+
+  ```javascript
+
+  const helpCardData: HelpCard = {
+    description: "This is a test application.",
+    shortcuts: [
+      {
+        description: "Home",
+        shortcut: "ctrl + space + esc",
+      },
+      {
+        description: "About",
+        shortcut: "alt + enter + p",
+      },
+    ],
+    links: [
+      {
+        title: "Ngx-layout",
+        link: "https://github.com/EmilGramDK/ngx-layout",
+      },
+      {
+        title: "Ngx-layout",
+        link: "https://github.com/EmilGramDK/ngx-layout",
+      },
+    ],
+    contacts: [
+      {
+        title: "Sofware developer",
+        name: "John Doe",
+        email: "john@doe.com",
+      },
+      {
+        title: "Assistent",
+        name: "Jane Doe",
+        email: "Jane@doe.com",
+      },
+    ],
+
+  ```
+
 ## License
 
 This project is licensed under the MIT License.

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import {
+  Footer,
   GroupRoute,
   HelpCard,
   LayoutComponent,
@@ -89,13 +90,7 @@ export class AppComponent {
       ],
     };
 
-    const FooterData = {
-      title: "Footer Title",
-      subTitle: "Footer Subtitle",
-    };
-
     const LogoData = {
-      onClickPath: "/",
       path: "/man-logo.png",
       logoText: "Demo App",
     };
@@ -105,7 +100,15 @@ export class AppComponent {
       helpCard: helpCardData,
       showSidebar: true,
       logo: LogoData,
-      footer: FooterData,
+      footer: {
+        title: "Footer Title",
+        subTitle: "Footer Subtitle",
+        onClick: this.test,
+      },
     });
+  }
+
+  private test() {
+    alert("test");
   }
 }

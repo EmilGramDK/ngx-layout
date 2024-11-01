@@ -12,11 +12,7 @@
       </button>
     </div>
     <div class="layout_sidebar" [ngClass]="{ collapsed: sidebarCollapsed }">
-      <div
-        class="logo_container flex flex-col gap-2"
-        *ngIf="logo"
-        onclick="logo.onClickPath"
-      >
+      <div class="logo_container flex flex-col gap-2" *ngIf="logo">
         <img
           *ngIf="logo.path"
           alt="Logo transform transition-opacity duration-500 ease-in-out"
@@ -125,10 +121,30 @@
           <li style="flex: 1 1 auto"></li>
 
           <li class="footer" *ngIf="footer">
-            <div class="footer_content" (click)="footerClick()">
-              <div class="footer_text">
-                <span class="footer_title">{{ footer.title }}</span>
-                <span class="footer_subtitle">{{ footer.subTitle }}</span>
+            <div class="footer_content" (click)="footer?.onClick()">
+              <div class="footer_text w-full">
+                <span
+                  class="footer_title"
+                  [ngClass]="{ hidden: sidebarCollapsed }"
+                >
+                  {{ footer.title }}
+                </span>
+                <span
+                  class="footer_subtitle"
+                  [ngClass]="{ hidden: sidebarCollapsed }"
+                >
+                  {{ footer.subTitle }}
+                </span>
+                <span
+                  class="flex w-full justify-center"
+                  [ngClass]="{ '': sidebarCollapsed }"
+                >
+                  <i
+                    [ngClass]="{
+                      'icon pi pi-user': sidebarCollapsed,
+                    }"
+                  ></i>
+                </span>
               </div>
             </div>
           </li>
@@ -189,7 +205,7 @@
         </ul>
         <ul class="footer-container">
           <li class="footer" *ngIf="footer">
-            <div class="footer_content" (click)="footerClick()">
+            <div class="footer_content" (click)="footer?.onClick()">
               <div class="footer_text">
                 <span class="footer_title">{{ footer.title }}</span>
                 <span class="footer_subtitle">{{ footer.subTitle }}</span>
