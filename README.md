@@ -45,23 +45,28 @@ npm install @emilgramdk/ngx-layout
    ],
    ```
 
-3. **Add to App Component**: Add the layout to your root component.
+3. **Add To App Component**:
 
-   ```html
-   <ngx-layout
-     [loading]="appService.isLoading || !authService.token"
-     [renderApp]="!appService.initialLoading && authService.token"
-   >
-   </ngx-layout>
+   ```typescript
+   import { LayoutComponent, ThemeService } from '@emilgramdk/ngx-layout';
+
+   @Component({
+     selector: "app-root",
+     templateUrl: "./app.component.html",
+   })
+   export class AppComponent {
+     constructor(public themeService: ThemeService) {}
+
+     this.themeService.setConfig(layoutConfig);
+   }
+
+   const layoutConfig: LayoutConfig = {}
    ```
 
-4. **Available Props**: You can pass these props to the layout.
+4. **Add to App Component HTML**: Add the layout to your root component.
 
    ```html
-   <ngx-layout
-      loading="boolean"                     Shows a loader
-      renderApp="boolean"                   Tell the layout to wait for a state before rendering the app
-   </ngx-layout>
+   <ngx-layout [loading]="boolean" [renderApp]="boolean"> </ngx-layout>
    ```
 
 5. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
@@ -70,51 +75,6 @@ npm install @emilgramdk/ngx-layout
      <ng-template #topbar> Topbar Button </ng-template>
    </ngx-layout>
    ```
-
-## Components
-
-- **Help card component**
-
-  This is a componet that shows a little icon in the topbar with an "i" for info, if you add this in **app.component.ts**
-
-  ```javascript
-
-  const helpCardData: HelpCard = {
-    description: "This is a test application.",
-    shortcuts: [
-      {
-        description: "Home",
-        shortcut: "ctrl + space + esc",
-      },
-      {
-        description: "About",
-        shortcut: "alt + enter + p",
-      },
-    ],
-    links: [
-      {
-        title: "Ngx-layout",
-        link: "https://github.com/EmilGramDK/ngx-layout",
-      },
-      {
-        title: "Ngx-layout",
-        link: "https://github.com/EmilGramDK/ngx-layout",
-      },
-    ],
-    contacts: [
-      {
-        title: "Sofware developer",
-        name: "John Doe",
-        email: "john@doe.com",
-      },
-      {
-        title: "Assistent",
-        name: "Jane Doe",
-        email: "Jane@doe.com",
-      },
-    ],
-
-  ```
 
 ## License
 
