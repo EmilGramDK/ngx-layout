@@ -2,7 +2,6 @@ import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 import { _LayoutConfig, defaultConfig } from "./config";
 import { Title } from "@angular/platform-browser";
-import { BehaviorSubject } from "rxjs";
 import { LayoutConfig } from "./interfaces";
 
 @Injectable({
@@ -41,8 +40,6 @@ export class ThemeService {
       _title = `${title} | ${_title}`;
     }
 
-    console.log("title", _title);
-
     this.titleService.setTitle(_title || "");
   }
 
@@ -53,13 +50,14 @@ export class ThemeService {
 
   private initializeTheme() {
     const savedTheme = this.getStoredTheme();
-    const theme = savedTheme || "light";
+    const theme = savedTheme || "dark";
     this.theme = theme;
     this.applyTheme(theme);
   }
 
-  private getStoredTheme(): "light" | "dark" | null {
-    return localStorage.getItem(this.themeKey) as "light" | "dark" | null;
+  private getStoredTheme(): "light" | "dark" {
+    const storedTheme = localStorage.getItem(this.themeKey) || "dark";
+    return storedTheme as "light" | "dark";
   }
 
   private applyTheme(theme: "light" | "dark") {

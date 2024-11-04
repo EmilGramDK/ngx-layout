@@ -46,15 +46,9 @@ export class AppComponent {
     },
   ];
 
-  public extraRoutes: SidebarRoute[] = [
-    {
-      title: "Home",
-      icon: "pi pi-home",
-    },
-  ];
-
   constructor(private themeService: ThemeService) {
     const helpCardData: HelpCard = {
+      title: "Demo App",
       description: "This is a test application.",
       shortcuts: [
         {

@@ -1,18 +1,12 @@
 import { Route } from "@angular/router";
 import { _LayoutConfig } from "./config";
 
-// Defines the shape of the configuration object for the the Layout.
 export interface LayoutConfig extends Partial<_LayoutConfig> {}
+export type SidebarRoutes = SidebarRoute[];
 
 export interface SidebarRoute extends Route {
   hideFromMenu?: boolean;
   icon?: string;
-}
-
-export interface SidebarFooter {
-  title?: string;
-  subTitle?: string;
-  onClick?: () => void;
 }
 
 export interface Logo {
@@ -34,7 +28,8 @@ export interface GroupRoute {
 }
 
 export interface HelpCard {
-  description: string;
+  title: string;
+  description?: string;
   shortcuts?: HelpCardShortcut[];
   links?: HelpCardLink[];
   contacts?: HelpCardContact[];

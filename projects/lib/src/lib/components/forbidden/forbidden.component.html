@@ -4,14 +4,19 @@
 >
   <div class="flex flex-col items-center justify-center text-center">
     <h1 class="m-4 text-6xl font-bold text-red-600">401</h1>
-    <p class="text-4xl font-semibold">Access Denied</p>
-    <p class="text-md m-4 text-gray-600">
-      You do not have permission to view this application.
+    <p class="text-4xl font-semibold text-white">Access Denied</p>
+    <p class="text-md m-4" style="max-width: 400px">
+      It looks like you don't have permission to access this application or your
+      session has expired.
     </p>
 
-    <div class="mt-2 flex items-center gap-2">
+    <p class="text-md m-4" style="max-width: 400px">
+      Try logging in again or check help for more info on how to get access.
+    </p>
+
+    <div class="mt-4 flex items-center gap-2">
       <button
-        class="btn-surface text-sm font-bold uppercase"
+        class="btn btn-surface text-sm font-bold uppercase"
         (click)="tryAgain()"
       >
         <i class="pi pi-refresh text-sm"></i> Try Again
@@ -19,7 +24,7 @@
 
       <button
         (click)="showHelpCard = true"
-        class="btn-surface text-sm font-bold uppercase"
+        class="btn btn-surface text-sm font-bold uppercase"
       >
         <i class="pi pi-info-circle text-sm"></i> Help
       </button>

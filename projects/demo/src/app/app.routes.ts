@@ -1,10 +1,12 @@
-import { Routes } from "@angular/router";
-import { SidebarRoute } from "../../../lib/src/lib/interfaces";
 import { HomeComponent } from "./home/home.component";
 import { ToolBarComponent } from "./toolbar/toolbar.component";
-import { ForbiddenComponent, NotFoundComponent } from "@emilgramdk/ngx-layout";
+import {
+  ForbiddenComponent,
+  NotFoundComponent,
+  SidebarRoutes,
+} from "@emilgramdk/ngx-layout";
 
-export const routes: SidebarRoute[] = [
+export const routes: SidebarRoutes = [
   {
     title: "Home",
     path: "",

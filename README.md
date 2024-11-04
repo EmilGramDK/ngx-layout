@@ -10,11 +10,11 @@ The **ngx-layout** library provides a ready-to-use layout template for Angular a
 
 - **Sidebar Navigation**: Includes a customizable sidebar for easy navigation.
 - **Dark/Light Mode Toggle**: Built-in support for switching between dark and light themes.
+- **Responsive Layout**: Automatically adjusts to different screen sizes, ensuring a great experience on both desktop and mobile devices.
 
 ## TODO
 
 - **More Customization**: Make it easier to configure the layout and styles to match your application's branding.
-- **Responsive Layout**: Automatically adjusts to different screen sizes, ensuring a great experience on both desktop and mobile devices.
 
 ## Installation
 
@@ -41,11 +41,11 @@ npm install @emilgramdk/ngx-layout
    ```typescript
    content: [
     "./src/**/*.{html,ts}",
-    "./node_modules/@emilgramdk/ngx-layout/**/*.{html,ts,mjs}", // Include your library components
+    "./node_modules/@emilgramdk/ngx-layout/**/*.{html,ts,mjs}", // Library components
    ],
    ```
 
-3. **Add To App Component**:
+3. **Setup library config inside root component**:
 
    ```typescript
    import { LayoutComponent, ThemeService } from '@emilgramdk/ngx-layout';
@@ -63,7 +63,7 @@ npm install @emilgramdk/ngx-layout
    const layoutConfig: LayoutConfig = {}
    ```
 
-4. **Add to App Component HTML**: Add the layout to your root component.
+4. **Add layout to root component**: Add the layout to your root component.
 
    ```html
    <ngx-layout [loading]="boolean" [renderApp]="boolean"> </ngx-layout>
@@ -72,7 +72,7 @@ npm install @emilgramdk/ngx-layout
 5. **Topbar buttons**: You can add custom buttons to the Topbar with ng-template
    ```html
    <ngx-layout>
-     <ng-template #topbar> Topbar Button </ng-template>
+     <ng-template #topbar> Topbar View </ng-template>
    </ngx-layout>
    ```
 

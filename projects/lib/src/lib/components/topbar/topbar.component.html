@@ -40,7 +40,8 @@
 </div>
 
 <p-dialog
-  header="Help & Info"
+  *ngIf="themeService.layoutConfig.helpCard"
+  [header]="themeService.layoutConfig.helpCard.title"
   [(visible)]="showHelpCard"
   [modal]="true"
   [style]="{ width: '50rem' }"

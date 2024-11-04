@@ -15,23 +15,22 @@
       <div class="logo_container flex flex-col gap-2" *ngIf="logo">
         <img
           *ngIf="logo.path"
-          alt="Logo transform transition-opacity duration-500 ease-in-out"
+          alt="Logo"
           [src]="logo.path"
           [ngClass]="{
-            'opacity-0': sidebarCollapsed,
-            collapsed: sidebarCollapsed,
-            'delay-200': !sidebarCollapsed,
+            '-ml-[500px]': sidebarCollapsed,
+            'ml-0': !sidebarCollapsed,
           }"
-          class="logo max-h-12"
+          class="logo max-h-12 transition-all duration-500"
           (click)="goToPage('')"
         />
         <p
           *ngIf="logo.logoText"
           [style.color]="'var(--secondary)'"
-          class="transform text-sm font-medium opacity-0 transition-all duration-200 ease-out"
+          class="text-sm font-medium transition-all duration-500"
           [ngClass]="{
-            '-translate-y-1 opacity-100 delay-300': !sidebarCollapsed,
-            'opacity-0': sidebarCollapsed,
+            '-ml-[500px]': sidebarCollapsed,
+            'ml-0': !sidebarCollapsed,
           }"
         >
           {{ logo.logoText }}

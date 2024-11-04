@@ -1,10 +1,10 @@
 @let helpCard = themeService.layoutConfig.helpCard;
-<div class="surface-bg mx-auto rounded-lg px-4">
+<div class="surface-bg mx-auto rounded-lg px-4" *ngIf="helpCard">
   <!-- About Section -->
 
-  <section class="mb-8">
+  <section class="mb-8" *ngIf="helpCard?.description">
     <p class="break-words text-base">
-      {{ helpCard?.description }}
+      {{ helpCard.description }}
     </p>
   </section>
 
@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (shortcut of helpCard?.shortcuts; track $index) {
+        @for (shortcut of helpCard.shortcuts; track $index) {
           <tr class="last:border-b-0">
             <td class="px-4 py-2">{{ shortcut.description }}</td>
             <td class="py-2 pl-2">
@@ -34,7 +34,7 @@
   <section class="mb-8" *ngIf="helpCard?.links">
     <p class="mb-4 text-xl font-bold uppercase">Links</p>
     <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-      @for (link of helpCard?.links; track $index) {
+      @for (link of helpCard.links; track $index) {
         <a
           target="_blank"
           [href]="link.link"
