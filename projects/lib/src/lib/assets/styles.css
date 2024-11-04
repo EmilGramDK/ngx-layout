@@ -49,14 +49,17 @@ body.dark {
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-  will-change: transform;
-  backface-visibility: hidden;
+  position: relative;
 }
-.btn:hover {
-  transform: scale(1.02);
+.btn:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
 }
 .btn-surface {
   background: var(--surface);
@@ -88,6 +91,10 @@ body.dark {
   background: transparent;
   color: var(--secondary);
   border: 1px solid var(--secondary);
+}
+.btn-topbar {
+  background-color: var(--dark-surface); /* Primary button color */
+  color: #fff;
 }
 
 body {
@@ -543,12 +550,6 @@ table tbody tr:first-child td {
 .p-tabview-nav a {
   background: var(--card);
 }
-
-.btn-topbar {
-  background-color: var(--dark-surface); /* Primary button color */
-  color: var(--dark-foreground);
-}
-
 .popup-card {
   width: 300px;
   padding: 20px;
