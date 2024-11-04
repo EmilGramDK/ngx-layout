@@ -1,6 +1,6 @@
 {
   "name": "@emilgramdk/ngx-layout",
-  "version": "1.0.53",
+  "version": "1.0.55",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
