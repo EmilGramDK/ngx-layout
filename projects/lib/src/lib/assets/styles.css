@@ -429,6 +429,7 @@ td {
   }
   .layout_page {
     border-top-right-radius: 0.75rem;
+    margin-left: 0;
   }
 }
 
