@@ -99,6 +99,7 @@ export class AppComponent {
       titleSuffix: "Demo App",
       helpCard: helpCardData,
       showSidebar: true,
+      showTopbar: false,
       logo: LogoData,
       footer: {
         title: "Footer Title",
