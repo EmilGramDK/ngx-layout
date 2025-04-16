@@ -1,6 +1,6 @@
 {
   "name": "@emilgramdk/ngx-layout",
-  "version": "1.0.56",
+  "version": "1.1.0",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/emilgramdk"
@@ -17,19 +17,19 @@
     "url": "https://github.com/emilgramdk/ngx-layout/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0",
-    "tailwindcss": "^3.4.0"
+    "@angular/common": ">=18.0.0 <20.0.0",
+    "@angular/core": ">=18.0.0 <20.0.0",
+    "tailwindcss": "^4.1.4"
   },
   "dependencies": {
-    "tslib": "^2.5.0"
+    "tslib": "^2.8.1"
   },
   "sideEffects": false,
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }
