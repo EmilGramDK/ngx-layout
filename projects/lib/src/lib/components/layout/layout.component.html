@@ -9,7 +9,7 @@
   <ngx-layout-topbar (toggleSidebar)="toggleSidebar()">
     <ng-container *ngTemplateOutlet="topbarTemplate"></ng-container>
   </ngx-layout-topbar>
-  <div class="layout_page">
+  <div class="layout_page" [style.height]="getDynamicHeight()">
     <router-outlet *ngIf="renderApp"></router-outlet>
   </div>
 </ngx-layout-sidebar>

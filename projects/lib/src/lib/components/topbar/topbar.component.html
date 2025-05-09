@@ -1,4 +1,5 @@
 <div
+  *ngIf="themeService.layoutConfig.showTopbar"
   class="layout_topbar flex items-center"
   [ngStyle]="{ height: themeService.layoutConfig.topbarHeight + 'px' }"
 >

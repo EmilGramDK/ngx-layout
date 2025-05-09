@@ -31,9 +31,15 @@ export class LayoutComponent {
 
   public sidebarCollapsed: boolean = false;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(public themeService: ThemeService) {}
 
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
+  }
+
+  getDynamicHeight() {
+    return this.themeService.layoutConfig.showTopbar
+      ? "calc(100vh - 60px)"
+      : "100vh";
   }
 }
